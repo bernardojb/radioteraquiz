@@ -20,7 +20,7 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route index element={<Home/>} />
+        <Route path="/home" element={<Home/>} />
         <Route element={<Home/>} />
       </Routes>
       <Footer />
