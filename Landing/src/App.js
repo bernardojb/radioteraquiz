@@ -14,7 +14,6 @@ import './App.scss';
 import Header from './components/Header/Header'
 import Home from './pages/Home'
 import Footer from './components/Footer/Footer'
-import GlobalStyles from '@mui/material/GlobalStyles';
 
 function App() {
   return (
@@ -22,6 +21,7 @@ function App() {
       <Header />
       <Routes>
         <Route exact path='/' element={<Home/>} />
+        <Route element={<Home/>} />
       </Routes>
       <Footer />
     </Router>
