@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
   Link
@@ -17,7 +17,7 @@ import Footer from './components/Footer/Footer'
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Header />
       <Routes>
         <Route exact path="/" index >
@@ -25,7 +25,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
-    </Router>
+    </BrowserRouter>
   );
 }
 
