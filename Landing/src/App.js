@@ -23,9 +23,6 @@ function App() {
         <Route exact path="/" index >
           <Home />
         </Route>
-        <Route>
-          <Home />
-        </Route>
       </Routes>
       <Footer />
     </Router>
