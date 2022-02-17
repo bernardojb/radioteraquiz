@@ -1,0 +1,123 @@
+//mobile
+.header--mobile{
+    display: flex;
+    flex-direction: column !important;
+    background-color: white;
+    position: absolute;
+    top: 99px;
+    left: 0px;
+    width: 100%;
+    padding: 10px 24px;
+
+    a{
+        text-decoration: none;
+        color: #2d3748;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+}
+
+//desktop
+.header {
+    background-color: transparent;
+    top: 0;
+    height: 120px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: 0.2s ease-in-out;
+    background-color: transparent;
+    z-index: 99 !important;
+
+    .header__logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .header__navLinks {
+        display: flex;
+        align-items: center;
+        margin-left: 100px;
+
+        a {
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            margin: 0px 25px;
+        }
+    }
+    .header__downloadBtn {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    }
+
+    .header__navLinks--mobile{
+        display: flex;
+        flex-direction: column;
+    }
+
+   
+}
+
+.header.sticky {
+    transition: 0.2s ease-in-out;
+    background-color: white !important;
+    position: sticky;
+    height: 100px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+
+    .header__navLinks {
+        a {
+            color: #2d3748;
+        }
+    }
+}
+
+//////////////////////////////////////////////////////
+.contact__input {
+    width: 80%;
+    border: none !important;
+    margin-bottom: 15px !important;
+    .MuiFilledInput-root {
+        border: none;
+        border-radius: 10px !important;
+        font-family: "Poppins", sans-serif !important;
+        border: none !important;
+
+        input {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
+        &::before {
+            display: none !important;
+        }
+
+        &::after {
+            display: none !important;
+        }
+    }
+
+    .MuiInputAdornment-root {
+        margin-top: 0px !important;
+    }
+}
+
+.contact__textarea {
+    font-family: "Poppins", sans-serif !important;
+    color: #718096;
+    font-size: 16px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.06);
+    border-radius: 10px !important;
+    box-sizing: border-box;
+    padding-left: 12px;
+    padding-top: 10px;
+
+    &::placeholder{
+        // padding-left: 12px;
+        // padding-top: 10px;
+        color: #71809677;
+        }
+}
