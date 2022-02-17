@@ -20,7 +20,7 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route exact path='/' element={<Home/>} />
+        <Route index element={<Home/>} />
         <Route element={<Home/>} />
       </Routes>
       <Footer />
