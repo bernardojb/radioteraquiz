@@ -21,7 +21,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route exact path="/" index >
+          <Route exact path="/home" index >
             <Home />
           </Route>
         </Routes>
