@@ -20,12 +20,11 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route element={<Home />} />
       </Routes>
       <Footer />
-    </Router>,
-    document.getElementById("root")
+    </Router>
   );
 }
 
