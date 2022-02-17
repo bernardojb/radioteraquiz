@@ -10,21 +10,11 @@ import FAQ from '../components/5-FAQ/FAQ'
 export default function Home() {
     return (
         <div className='home'>
-            <div className='home-1'>
-                <Intro />
-            </div>
-            <div className='home-2'>
-                <Funcionamento />
-            </div>
-            <div className='home-3'>
-                <Gamification />
-            </div>
-            <div className='home-4'>
-                <Planos />
-            </div>
-            <div className='home-5'>
-                <FAQ />
-            </div>
+            <Intro />
+            <Funcionamento />
+            <Gamification />
+            <Planos />
+            <FAQ />
         </div>
     );
 }
