@@ -20,8 +20,8 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route index path="/" element={<Home />} />
-        <Route element={<Home />} />
+        <Route index path="/" element={<Home/>} />
+        <Route element={<Home/>} />
       </Routes>
       <Footer />
     </BrowserRouter>
