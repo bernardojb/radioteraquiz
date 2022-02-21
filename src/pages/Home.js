@@ -9,12 +9,12 @@ import FAQ from '../components/5-FAQ/FAQ'
 
 export default function Home() {
     return (
-        <div className='home'>
+        <>
             <Intro />
             <Funcionamento />
             <Gamification />
             <Planos />
             <FAQ />
-        </div>
+        </>
     );
 }

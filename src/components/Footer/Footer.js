@@ -8,69 +8,97 @@ import hokupLogo from '../../assets/logo-inverted.svg'
 export default function Footer() {
     return (
         <Container className='footer' maxWidth='false' sx={{
-            backgroundColor:'#F6F7FA',
-            padding:'50px 0px',
-            display:'flex',
-            justifyContent:'center'
+            backgroundColor: '#F6F7FA',
+            padding: '50px 0px',
+            display: 'flex',
+            justifyContent: 'center'
         }} >
             <Grid container maxWidth={'lg'} className='footer__container'
-            sx={{
-                display:'flex',
-                flexDirection:'row',
-                justifyContent:'space-between',
-                alignItems:'flex-start'
-            }}>
-                <Grid item >
-                    <Box sx={{
-                        display:'flex',
-                        flexDirection:'column',
-                        alignItems:'flex-start'
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                }}>
+                <Grid item xs={12} sm={6} md={3}
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: { xs: 'center', md: 'flex-start' },
+                        marginBottom: { xs: '50px', md: '0px' },
+                        order: { xs: '4', sm: '1' }
                     }}>
-                        <img src={radioteraquizLogo} style={{width:'100%', maxWidth:'200px'}}/>
+                    <Box
+                        sx={{
+                            maxWidth: '250px',
+                            width: '100%'
+                        }}
+                    >
+                        <img src={radioteraquizLogo} style={{ width: '100%', maxWidth: '200px' }} />
                         <p>© 2021 - Radioteraquiz LTDA</p>
-                        <span style={{display:'flex', flexDirection:'row', width:'100%'}}>
-                            <p style={{fontWeight:'bold', marginRight:'15px'}}>Powered by</p>
-                            <img style={{width:'100%', maxWidth:"90px"}} src={hokupLogo} />
+                        <span style={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
+                            <p style={{ fontWeight: 'bold', marginRight: '15px' }}>Powered by</p>
+                            <img style={{ width: '100%', maxWidth: "90px" }} src={hokupLogo} />
                         </span>
                     </Box>
                 </Grid>
-                <Grid item
-                sx={{
-                    display:'flex',
-                    flexDirection:'column',
-                    alignItems:'flex-start'
-                }}>
-                    <Box>
-                        <p style={{fontWeight:'bold'}}>Informações</p>
+                <Grid item xs={12} sm={6} md={3}
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        marginBottom: { xs: '50px', md: '0px' },
+                        order: { xs: '1', sm: '2' }
+                    }}>
+                    <Box sx={{
+                        maxWidth: '250px',
+                        width: '100%'
+                    }}>
+                        <p style={{ fontWeight: 'bold', marginTop: '0px' }}>Informações</p>
                         <Box>
-                            <p>Como Funciona</p>
-                            <p>Planos</p>
-                            <p>FAQ</p>
+                            <a href="#sobre-o-app">
+                                <p>Como Funciona</p>
+                            </a>
+                            <a href='#planos'>
+                                <p>Planos</p>
+                            </a>
+                            <a href='#faq'>
+                                <p>FAQ</p>
+                            </a>
                         </Box>
                     </Box>
                 </Grid>
-                <Grid item
-                sx={{
-                    display:'flex',
-                    flexDirection:'column',
-                    alignItems:'flex-start'
-                }}>
-                    <Box>
-                        <p style={{fontWeight:'bold'}}>Download</p>
+                <Grid item xs={12} sm={6} md={3}
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        marginBottom: { xs: '50px', md: '0px' },
+                        order: { xs: '2', sm: '3' }
+                    }}>
+                    <Box sx={{
+                        maxWidth: '250px',
+                        width: '100%'
+                    }}>
+                        <p style={{ fontWeight: 'bold', marginTop: '0px' }}>Download</p>
                         <Box>
                             <p>Android</p>
                             <p>iOS</p>
                         </Box>
                     </Box>
                 </Grid>
-                <Grid item
-                sx={{
-                    display:'flex',
-                    flexDirection:'column',
-                    alignItems:'flex-start'
-                }}>
-                    <Box>
-                        <p style={{fontWeight:'bold'}}>Social Media</p>
+                <Grid item xs={12} sm={6} md={3}
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        marginBottom: { xs: '50px', md: '0px' },
+                        order: { xs: '3', sm: '4' }
+                    }}>
+                    <Box sx={{
+                        maxWidth: '250px',
+                        width: '100%'
+                    }}>
+                        <p style={{ fontWeight: 'bold', marginTop: '0px' }}>Social Media</p>
                         <Box>
                             <p>Instagram</p>
                             <p>Linkedin</p>

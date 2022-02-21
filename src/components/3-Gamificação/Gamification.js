@@ -1,5 +1,7 @@
 import React from 'react'
 import { Grid, Container, Button, Box } from '@mui/material'
+import FeatherIcon from 'feather-icons-react';
+import { display } from '@mui/system';
 
 export default function Gamification() {
     return (
@@ -23,46 +25,46 @@ export default function Gamification() {
                     margin: '0px'
                 }}>
                 <Grid item xs={12} sm={6} md={3}
-                 sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center'
-                }}>
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center'
+                    }}>
                     <h1 style={{ marginBottom: '0px', fontSize: '48px', marginTop: '0px' }}>+700</h1>
                     <p style={{ height: '55px', marginTop: '0px', color: '#FF8635', fontSize: '20px' }}>Perguntas</p>
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center'
-                }}>
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center'
+                    }}>
                     <h1 style={{ marginBottom: '0px', fontSize: '48px', marginTop: '0px' }}>+650</h1>
                     <p style={{ height: '55px', marginTop: '0px', color: '#FF8635', fontSize: '20px' }}>Respostas<br />comentadas</p>
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center'
-                }}>
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center'
+                    }}>
                     <h1 style={{ marginBottom: '0px', fontSize: '48px', marginTop: '0px' }}>3</h1>
                     <p style={{ height: '55px', marginTop: '0px', color: '#FF8635', fontSize: '20px' }}>Temas únicos</p>
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textAlign: 'center'
-                }}>
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center'
+                    }}>
                     <h1 style={{ marginBottom: '0px', fontSize: '48px', marginTop: '0px' }}>50</h1>
                     <p style={{ height: '55px', marginTop: '0px', color: '#FF8635', fontSize: '20px' }}>Perguntas novas<br />por mês</p>
                 </Grid>
@@ -106,12 +108,22 @@ export default function Gamification() {
                         padding: '20px',
                         backgroundColor: 'white'
                     }}>
-                        <span>icon</span>
+                        <Box sx={{
+                            width: '64px',
+                            height: '64px',
+                            borderRadius: '50%',
+                            backgroundColor: "#FFF9EF",
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}>
+                            <FeatherIcon icon='check-circle' style={{ color: '#FFA929' }} />
+                        </Box>
                         <p style={{ marginBottom: '15px', fontWeight: 'bold', fontSize: '20px' }}>Percentual de acerto</p>
                         <p style={{ marginTop: '0px', maxWidth: '190px' }}>Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                     </Box>
                 </Grid>
-                <Grid item  xs={12} sm={6} md={3}>
+                <Grid item xs={12} sm={6} md={3}>
                     <Box sx={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -123,12 +135,22 @@ export default function Gamification() {
                         padding: '20px',
                         backgroundColor: 'white'
                     }}>
-                        <span>icon</span>
+                        <Box sx={{
+                            width: '64px',
+                            height: '64px',
+                            borderRadius: '50%',
+                            backgroundColor: "#FFF9EF",
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}>
+                            <FeatherIcon icon='bar-chart' style={{ color: '#FFA929' }} />
+                        </Box>
                         <p style={{ marginBottom: '15px', fontWeight: 'bold', fontSize: '20px' }}>Acertos em sequência</p>
                         <p style={{ marginTop: '0px', maxWidth: '190px' }}>Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                     </Box>
                 </Grid>
-                <Grid item  xs={12} sm={6} md={3}>
+                <Grid item xs={12} sm={6} md={3}>
                     <Box sx={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -140,12 +162,22 @@ export default function Gamification() {
                         padding: '20px',
                         backgroundColor: 'white'
                     }}>
-                        <span>icon</span>
+                        <Box sx={{
+                            width: '64px',
+                            height: '64px',
+                            borderRadius: '50%',
+                            backgroundColor: "#FFF9EF",
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}>
+                            <FeatherIcon icon='book-open' style={{ color: '#FFA929' }} />
+                        </Box>
                         <p style={{ marginBottom: '15px', fontWeight: 'bold', fontSize: '20px' }}>Perguntas respondidas</p>
                         <p style={{ marginTop: '0px', maxWidth: '190px' }}>Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                     </Box>
                 </Grid>
-                <Grid item  xs={12} sm={6} md={3}>
+                <Grid item xs={12} sm={6} md={3}>
                     <Box sx={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -157,7 +189,17 @@ export default function Gamification() {
                         padding: '20px',
                         backgroundColor: 'white'
                     }}>
-                        <span>icon</span>
+                        <Box sx={{
+                            width: '64px',
+                            height: '64px',
+                            borderRadius: '50%',
+                            backgroundColor: "#FFF9EF",
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                        }}>
+                            <FeatherIcon icon='activity' style={{ color: '#FFA929' }} />
+                        </Box>
                         <p style={{ marginBottom: '15px', fontWeight: 'bold', fontSize: '20px' }}>Tempo médio<br />de estudo</p>
                         <p style={{ marginTop: '0px', maxWidth: '190px' }}>Understand First. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                     </Box>

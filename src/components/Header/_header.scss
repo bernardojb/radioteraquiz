@@ -1,5 +1,5 @@
 //mobile
-.header--mobile{
+.header--mobile {
     display: flex;
     flex-direction: column !important;
     background-color: white;
@@ -9,7 +9,7 @@
     width: 100%;
     padding: 10px 24px;
 
-    a{
+    a {
         text-decoration: none;
         color: #2d3748;
         font-weight: bold;
@@ -44,6 +44,12 @@
             text-decoration: none;
             color: white;
             margin: 0px 25px;
+            transition: filter 0.2s ease;
+
+            &:hover {
+                transition: filter 0.2s ease;
+                filter: brightness(0.85);
+            }
         }
     }
     .header__downloadBtn {
@@ -52,12 +58,10 @@
         margin-left: auto;
     }
 
-    .header__navLinks--mobile{
+    .header__navLinks--mobile {
         display: flex;
         flex-direction: column;
     }
-
-   
 }
 
 .header.sticky {
@@ -84,6 +88,7 @@
         border-radius: 10px !important;
         font-family: "Poppins", sans-serif !important;
         border: none !important;
+        background-color: #EDF2F7;
 
         input {
             padding-top: 15px;
@@ -109,15 +114,58 @@
     color: #718096;
     font-size: 16px;
     border: none;
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: #EDF2F7;
     border-radius: 10px !important;
     box-sizing: border-box;
     padding-left: 12px;
     padding-top: 10px;
 
-    &::placeholder{
+    &::placeholder {
         // padding-left: 12px;
         // padding-top: 10px;
         color: #71809677;
+    }
+}
+
+.teste__modal-contato::-webkit-scrollbar {
+    display: none;
+}
+
+.contact__underline {
+    position: relative;
+    color: #718096;
+    text-decoration: none;
+    transition: 0.2s ease;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        top: 45px;
+        background-color: #E2E8F0;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        transition: 0.2s ease;
+    }
+
+    &:hover{
+        color:#F97316 !important;
+        transition: 0.2s ease;
+
+        &::after{
+            transition: 0.2s ease;
+            background-color:#F97316 !important;
         }
+    }
+}
+
+.contact__underline.active{
+    color: #F97316 !important;
+
+    &::after {
+        background-color: #F97316 !important;
+    }
 }

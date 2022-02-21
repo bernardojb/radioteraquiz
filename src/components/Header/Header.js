@@ -19,6 +19,7 @@ import {
 } from '@mui/material'
 
 //Icons
+import FeatherIcon from 'feather-icons-react'
 import { AccountCircle } from '@mui/icons-material'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -131,11 +132,17 @@ export default function Header(e) {
 
     //Modal
     const [open, setOpenDownload] = useState(false);
-    const handleOpenDownload = () => setOpenDownload(true);
+    const handleOpenDownload = () => {
+        setOpenDownload(true);
+        setOpenHeader(openHeader ? false : true)
+    }
     const handleCloseDownload = () => setOpenDownload(false);
 
     const [openContato, setOpenContato] = useState(false);
-    const handleOpenContato = () => setOpenContato(true);
+    const handleOpenContato = () => {
+        setOpenContato(true);
+        setOpenHeader(openHeader ? false : true)
+    }
     const handleCloseContato = () => setOpenContato(false);
 
     const [isContact, setIsContact] = useState(true)
@@ -164,13 +171,13 @@ export default function Header(e) {
                     <>
                         <Grid className='header__downloadBtn'>
                             <Button onClick={handleHeaderOpen}>
-                                <MenuIcon sx={{ color: '#2d3748', fontSize:'35px' }} />
+                                <MenuIcon sx={{ color: '#2d3748', fontSize: '35px' }} />
                             </Button>
                         </Grid>
                         {openHeader ? (
                             <Grid className='header--mobile'>
-                                <Link to="/">Sobre o app</Link>
-                                <Link to="/">Planos</Link>
+                                <a href="#sobre-o-app" onClick={handleHeaderOpen}>Sobre o app</a>
+                                <a href='#planos' onClick={handleHeaderOpen}>Planos</a>
                                 <Link to="" onClick={handleOpenContato}>Contato</Link>
                                 <Link to="" onClick={handleOpenDownload}>Download</Link>
                             </Grid>) :
@@ -180,9 +187,9 @@ export default function Header(e) {
                 ) : (
                     <>
                         <Grid className='header__navLinks' item >
-                            <Link to="/">Sobre o app</Link>
-                            <Link to="/">Planos</Link>
-                            <Link to="" onClick={handleOpenContato}>Contato</Link>
+                            <a className='header__navlink' href='#sobre-o-app'>Sobre o app</a>
+                            <a className='header__navlink' href='#planos'>Planos</a>
+                            <Link className='header__navlink' to="" onClick={handleOpenContato}>Contato</Link>
                         </Grid>
                         <Grid className='header__downloadBtn'>
                             <Button onClick={handleOpenDownload} className='btn-styled' style={{ fontSize: '14px', fontWeight: 'bold' }}>
@@ -262,8 +269,211 @@ export default function Header(e) {
                 </Box>
             </Modal>
 
-            {/* MODAL CONTATO */}
+            {/* //TESTE */}
             <Modal
+                open={openContato}
+                onClose={handleCloseContato}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                BackdropComponent={Backdrop}
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+
+                <Grid container spacing={2} sx={{
+                    maxWidth: "1000px",
+                    backgroundColor: "white",
+                    borderRadius: "15px",
+                    maxHeight: '80vh',
+                }}>
+                    <Grid item lg={6} sx={{
+                        paddingTop: '0px !important',
+                        paddingLeft: '0px !important'
+                    }}>
+                        <Box sx={{
+                            height: '100%',
+                            width: '100%'
+                        }}>
+                            <img className='img-teste' style={{
+                                display: 'block',
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                borderTopLeftRadius: '13px',
+                                borderBottomLeftRadius: '13px',
+                            }}
+                                src={modalContact} />
+                        </Box>
+                    </Grid>
+
+                    <Grid
+                        className='teste__modal-contato'
+                        item lg={6} sx={{
+                            maxHeight: '80vh',
+                            overflowY: 'scroll',
+                        }}>
+                        <Box sx={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'center',
+                            marginTop: '25px',
+
+                        }}>
+                            <ThemeProvider theme={contatoTheme} >
+                                <a href='#' onClick={handleIsContact} style={{ padding: '0px 25px' }} className={`contact__underline ${isContact ? ('active') : (null)}`}>
+                                    <Typography variant='subtitle1'>
+                                        Mensagem
+                                    </Typography>
+                                </a>
+                            </ThemeProvider>
+                            <ThemeProvider theme={contatoTheme}>
+                                <a href='#' onClick={handleIsMessage} style={{ padding: '0px 25px' }} className={`contact__underline ${!isContact ? ('active') : (null)}`}>
+                                    <Typography variant='subtitle1'>
+                                        Contato
+                                    </Typography>
+                                </a>
+                            </ThemeProvider>
+                        </Box>
+                        {isContact ? (
+                            <Box>
+                                <Box sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    maxWidth: '270px',
+                                    textAlign: 'center',
+                                    margin: '25px auto',
+
+                                }}>
+                                    <h1 style={{ marginBottom: '0px' }}>Fale Conosco</h1>
+                                    <p style={{ maxWidth: '270px', marginTop: '0px' }}>Está precisando de ajuda? Responderemos o seu contato o mais breve possível!</p>
+                                </Box>
+                                <Box
+                                    ref={form}
+                                    onSubmit={sendEmail}
+                                    component='form'
+                                    noValidate
+                                    autoComplete='off'
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        width: '100%',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        marginBottom: '25px'
+                                    }}
+                                >
+                                    <TextField
+                                        name='name'
+                                        className='contact__input'
+                                        required
+                                        // id="outlined-required"
+                                        placeholder='Seu Nome'
+                                        variant='filled'
+                                        InputProps={{
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <FeatherIcon icon='user' style={{ color: '#FFA929' }} />
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                    >
+                                    </TextField>
+                                    <TextField
+                                        name='email'
+                                        className='contact__input'
+                                        required
+                                        // id="outlined-required"
+                                        placeholder='Seu email'
+                                        variant='filled'
+                                        InputProps={{
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <FeatherIcon icon='mail' style={{ color: '#FFA929' }} />
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                    >
+                                    </TextField>
+                                    <TextField
+                                        name='subject'
+                                        className='contact__input'
+                                        required
+                                        // id="outlined-required"
+                                        placeholder='Assunto'
+                                        variant='filled'
+                                        InputProps={{
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <FeatherIcon icon='message-circle' style={{ color: '#FFA929' }} />
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                    >
+                                    </TextField>
+                                    <TextareaAutosize
+                                        name='message'
+                                        className='contact__textarea'
+                                        minRows={3}
+                                        placeholder="Sua Mensagem"
+                                        style={{ width: '80%', marginBottom: '20px' }}
+                                    />
+                                    <Button type='submit' className='btn-styled' style={{ width: '100%', maxWidth: '200px' }}> Enviar </Button>
+                                </Box>
+                            </Box>
+                        ) : (
+                            <Box>
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        maxWidth: '270px',
+                                        textAlign: 'center',
+                                        margin: '25px auto',
+                                    }}
+                                >
+                                    <h1 style={{ marginBottom: "25px" }}>
+                                        Informações <br /> de contato
+                                    </h1>
+                                    <p style={{ marginTop: '0px' }}>
+                                        Have some feedback for us? Give us a call or send an email.
+                                    </p>
+                                </Box>
+                                <Box sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    margin:'0 auto',
+                                    maxWidth: '300px',
+                                }}>
+                                    <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
+                                        <MailOutlineIcon sx={{ color: '#FF8635' }} />
+                                        <p style={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748' }}>
+                                            contato@radioteraquiz.com.br
+                                        </p>
+                                    </a>
+                                    <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
+                                        <InstagramIcon sx={{ color: '#FF8635' }} />
+                                        <p style={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748' }}>
+                                            @radioteraquiz
+                                        </p>
+                                    </a>
+                                    <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
+                                        <LinkedInIcon sx={{ color: '#FF8635' }} />
+                                        <p style={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748' }}>
+                                            Radioteraquiz
+                                        </p>
+                                    </a>
+
+                                </Box>
+                            </Box>
+                        )}
+                    </Grid>
+                </Grid>
+            </Modal>
+
+            {/* MODAL CONTATO */}
+            {/* <Modal
                 open={openContato}
                 onClose={handleCloseContato}
                 aria-labelledby="modal-modal-title"
@@ -326,7 +536,6 @@ export default function Header(e) {
                                     </ThemeProvider>
                                 </Grid>
                             </Grid>
-                            {/* /////////////////////////////////////////////////////////////// */}
                             {isContact ? (
                                 <>
                                     <Box sx={{
@@ -455,12 +664,10 @@ export default function Header(e) {
                                     </Box>
                                 </>
                             )}
-
-                            {/* /////////////////////////////////////////////////////////// */}
                         </Grid>
                     </Grid>
                 </Box>
-            </Modal>
+            </Modal> */}
         </Container>
     );
 }

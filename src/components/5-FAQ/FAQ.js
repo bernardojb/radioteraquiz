@@ -5,6 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import FeatherIcon from 'feather-icons-react'
 
 export default function FAQ() {
     const [expanded, setExpanded] = React.useState(false);
@@ -13,7 +14,7 @@ export default function FAQ() {
         setExpanded(isExpanded ? panel : false);
     };
     return (
-        <Container maxWidth='md' className='faq'>
+        <Container maxWidth='md' className='faq' id='faq'>
             <Grid container spacing={2} className='faq__container'
                 sx={{
                     display: 'flex',
@@ -25,9 +26,9 @@ export default function FAQ() {
                     <Box sx={{
                         textAlign: 'center'
                     }}>
-                        <p style={{fontSize:'24px', fontWeight:'bold', color:"#FF8635"}}>Ajuda</p>
-                        <h1 style={{fontSize:'48px'}}>Perguntas frequentes</h1>
-                        <p style={{fontSize:'20px'}}>Caso precise de suporte adicional, <a href='#' style={{fontWeight:'bold', color:"#FF8635", textDecoration:'underline'}}>entre em contato</a></p>
+                        <p style={{ fontSize: '24px', fontWeight: 'bold', color: "#FF8635" }}>Ajuda</p>
+                        <h1 style={{ fontSize: '48px' }}>Perguntas frequentes</h1>
+                        <p style={{ fontSize: '20px' }}>Caso precise de suporte adicional, <a href='#' style={{ fontWeight: 'bold', color: "#FF8635", textDecoration: 'underline' }}>entre em contato</a></p>
                     </Box>
                 </Grid>
                 <Grid item >
@@ -36,8 +37,9 @@ export default function FAQ() {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel1bh-content"
                             id="panel1bh-header"
-                            >
-                            <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize:'20px' }}>
+                        >
+                            <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color:'#2D3748' }}>
+                                <FeatherIcon icon='activity' style={{ color: '#FFA929', margin:'0px 20px' }} />
                                 Como funciona o sistema de assinaturas?
                             </Typography>
                         </AccordionSummary>
@@ -54,7 +56,8 @@ export default function FAQ() {
                             aria-controls="panel2bh-content"
                             id="panel2bh-header"
                         >
-                            <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize:'20px' }}>
+                            <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color:'#2D3748' }}>
+                                <FeatherIcon icon='activity' style={{ color: '#FFA929', margin:'0px 20px' }} />
                                 Qual a frequência de atualizações dos conteúdos?
                             </Typography>
 
@@ -72,7 +75,8 @@ export default function FAQ() {
                             expandIcon={<ExpandMoreIcon />}
                             aria-controls="panel3bh-content"
                             id="panel3bh-header">
-                            <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize:'20px' }}>
+                            <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color:'#2D3748' }}>
+                                <FeatherIcon icon='activity' style={{ color: '#FFA929', margin:'0px 20px' }} />
                                 Que tipo de conteúdos estão presentes no app?
                             </Typography>
 
@@ -90,7 +94,8 @@ export default function FAQ() {
                             aria-controls="panel4bh-content"
                             id="panel4bh-header"
                         >
-                            <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize:'20px' }}>
+                            <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color:'#2D3748' }}>
+                                <FeatherIcon icon='activity' style={{ color: '#FFA929', margin:'0px 20px' }} />
                                 Onde eu consigo fazer o download do app?
                             </Typography>
                         </AccordionSummary>
