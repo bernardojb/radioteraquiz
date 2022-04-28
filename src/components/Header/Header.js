@@ -162,7 +162,7 @@ export default function Header(e) {
                         {openHeader ? (
                             <Grid className='header--mobile'>
                                 <a href="#sobre-o-app" onClick={handleHeaderOpen}>Sobre o app</a>
-                                <a href='#planos' onClick={handleHeaderOpen}>Planos</a>
+                                {/* <a href='#planos' onClick={handleHeaderOpen}>Planos</a> */}
                                 <Link to="" onClick={handleOpenContato}>Contato</Link>
                                 <Link to="" onClick={handleOpenDownload}>Download</Link>
                             </Grid>) :
@@ -173,7 +173,7 @@ export default function Header(e) {
                     <>
                         <Grid className='header__navLinks' item >
                             <a className='header__navlink' href='#sobre-o-app'>Sobre o app</a>
-                            <a className='header__navlink' href='#planos'>Planos</a>
+                            {/* <a className='header__navlink' href='#planos'>Planos</a> */}
                             <Link className='header__navlink' to="" onClick={handleOpenContato}>Contato</Link>
                         </Grid>
                         <Grid className='header__downloadBtn'>
