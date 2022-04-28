@@ -69,9 +69,9 @@ export default function Footer() {
                             <a href="#sobre-o-app">
                                 <p>Como Funciona</p>
                             </a>
-                            <a href='#planos'>
+                            {/* <a href='#planos'>
                                 <p>Planos</p>
-                            </a>
+                            </a> */}
                             <a href='#faq'>
                                 <p>FAQ</p>
                             </a>
