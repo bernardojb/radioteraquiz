@@ -1,25 +1,7 @@
 .intro {
-    .intro__container {
-        .intro__text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-        }
-        .intro__image {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            img {
-                width: 100%;
-                max-width: 470px;
-            }
-        }
-    }
-
     &::before {
         content: " ";
-        width: 110%;
+        width: 100vw;
         height: 1000px;
         position: absolute;
         top: -200px;
@@ -29,13 +11,17 @@
         background-size: 100%;
         border-radius: 2rem;
         background-position: 650px bottom;
-        background-color: #FF8635;
+        background: radial-gradient(at 100% 60%, rgba(255,166,0,1) 0%, rgba(249,115,22,1) 36%);
     }
 }
 
-@media (min-width: 1024px) {
+
+
+@media (min-width: 900px) {
     .intro {
         &::before {
+            height: 1150px;
+            width: 110%;
             right: 35%;
             transform: skew(-23deg, 0deg) rotate(-10deg);
         }

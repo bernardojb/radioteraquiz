@@ -4,10 +4,26 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ThemeProvider, createTheme, responsiveFontSizes } from '@mui/material/styles';
+
+
+let theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Poppins',
+      'sans-serif',
+    ].join(','),
+  }
+});
+theme = responsiveFontSizes(theme);
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  </React.StrictMode>
+  ,
   document.getElementById('root')
 );
 

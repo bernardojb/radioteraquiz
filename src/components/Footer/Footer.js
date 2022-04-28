@@ -6,6 +6,9 @@ import radioteraquizLogo from '../../assets/logo-default.svg'
 import hokupLogo from '../../assets/logo-inverted.svg'
 
 export default function Footer() {
+    const date = new Date();
+    const year = date.getFullYear()
+
     return (
         <Container className='footer' maxWidth='false' sx={{
             backgroundColor: '#F6F7FA',
@@ -33,11 +36,19 @@ export default function Footer() {
                             width: '100%'
                         }}
                     >
+                        <a href='https://radioteraquiz.com.br/'>
                         <img src={radioteraquizLogo} style={{ width: '100%', maxWidth: '200px' }} />
-                        <p>© 2021 - Radioteraquiz LTDA</p>
+                        </a>
+                        <p>© {year} - Radioteraquiz LTDA</p>
                         <span style={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
                             <p style={{ fontWeight: 'bold', marginRight: '15px' }}>Powered by</p>
+                            <a href='https://hokup.com.br/' target='_blank' style={{
+                                display:'flex',
+                                justifyContent:'center',
+                                alignItems:'center'
+                            }}>
                             <img style={{ width: '100%', maxWidth: "90px" }} src={hokupLogo} />
+                            </a>
                         </span>
                     </Box>
                 </Grid>
@@ -100,9 +111,15 @@ export default function Footer() {
                     }}>
                         <p style={{ fontWeight: 'bold', marginTop: '0px' }}>Social Media</p>
                         <Box>
-                            <p>Instagram</p>
+                            <a href='https://www.instagram.com/radioterapedia/' target='_blank'>
+                                <p>Instagram</p>
+                            </a>
+                            <a href="#" target='_blank' >
                             <p>Linkedin</p>
+                            </a>
+                            <a href="#" target='_blank' >
                             <p>Facebook</p>
+                            </a>
                         </Box>
                     </Box>
                 </Grid>

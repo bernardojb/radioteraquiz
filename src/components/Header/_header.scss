@@ -44,11 +44,12 @@
             text-decoration: none;
             color: white;
             margin: 0px 25px;
-            transition: filter 0.2s ease;
+            transition: color 0.2s ease;
 
             &:hover {
-                transition: filter 0.2s ease;
-                filter: brightness(0.85);
+                transition: color 0.2s ease;
+                color: #FFFFFF99;
+                // filter: brightness(0.85);
             }
         }
     }
@@ -169,3 +170,41 @@
         background-color: #F97316 !important;
     }
 }
+
+.download__img{
+    width: 300px !important;
+    height: auto;
+    display: block;
+    position: absolute;
+    top: 25px;
+}
+
+.contact__img{
+    position: absolute;
+    width:100%;
+}
+
+@media (min-width: 600px) { 
+    .download__img{
+        width: 350px !important;
+        height: auto;
+        display: block;
+        position: absolute;
+    }
+ }
+
+ @media (min-width: 900px) { 
+    .download__img{
+        top:unset;
+        width: 500px !important;
+        height: auto;
+        display: block;
+        position: absolute;
+    }
+
+    .contact__img{
+        position: absolute;
+        height:100%;
+        width:auto;
+    }
+ }

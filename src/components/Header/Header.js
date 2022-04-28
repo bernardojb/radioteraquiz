@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+// import { motion } from "framer-motion"
 
 ///MUI
 import {
@@ -29,29 +30,13 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import logoDefault from '../../assets/logo-default.svg';
 import logoWhite from '../../assets/logo-white.svg'
 
-import modalPhone from '../../assets/img-01.png'
+import modalPhone from '../../assets/radio-intro.png'
 import modalContact from '../../assets/img-03.png'
 import iosIcon from '../../assets/ios.svg'
 import googleIcon from '../../assets/googlePlay.svg'
 import emailjs from 'emailjs-com'
 import MenuIcon from '@mui/icons-material/Menu';
-
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '100%',
-    maxWidth: '1000px',
-    height: '100%',
-    maxHeight: '750px',
-    bgcolor: 'background.paper',
-    margin: '25px',
-    boxShadow: 24,
-    p: 4,
-    padding: 0,
-    borderRadius: '15px'
-};
+import { height } from '@mui/system';
 
 const Backdrop = styled('div')`
   z-index: -1;
@@ -200,6 +185,8 @@ export default function Header(e) {
                 )}
 
             </Grid>
+
+
             {/* MODAL DOWNLOAD */}
             <Modal
                 open={open}
@@ -207,70 +194,393 @@ export default function Header(e) {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 BackdropComponent={Backdrop}
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}
             >
-                <Box sx={style}>
-                    <Grid container>
-                        <Grid item lg={6} sx={{ backgroundColor: '#FF8635', borderTopLeftRadius: '13px', borderBottomLeftRadius: '13px' }}>
-                            <Box sx={{
-                                position: 'relative',
-                            }}>
-                                <Box>
-                                    <img style={{
-                                        width: '100%',
-                                        objectFit: 'contain',
-                                        overflow: 'hidden',
-                                    }}
-                                        src={modalPhone} />
-                                </Box>
+                <Grid container
+                    sx={{
+                        backgroundColor: "white",
+                        width: '100%',
+                        maxWidth: '1000px',
+                        height: '80%',
+                        display: 'flex',
+                        margin: '10% 10%',
+                        borderRadius: '13px'
+                    }}
+                >
+                    <Grid item md={6} xs={12}
+                        sx={{
+                            background: 'radial-gradient(at 50% 50%, rgba(255,166,0,1) 0%, rgba(249,115,22,1) 80%)',
+                            borderTopLeftRadius: '13px',
+                            borderTopRightRadius: { md: '0px', xs: '13px' },
+                            borderBottomLeftRadius: { md: '13px', xs: '0px' },
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            overflow: 'hidden',
+                            position: 'relative',
+                            minHeight: '200px'
+                        }}>
+                        <img
+                            className='download__img'
+                            src={modalPhone} />
+                    </Grid>
 
-                            </Box>
-                        </Grid>
-                        <Grid item lg={6} sx={{
+                    <Grid item md={6} xs={12}
+                        sx={{
                             display: 'flex',
                             flexDirection: 'column',
                             alignItems: 'center',
-                            marginTop: '50px'
+                            justifyContent: 'center',
+                            backgroundColor: 'white',
+                            borderTopRightRadius: { md: '13px', xs: '0px' },
+                            borderBottomRightRadius: '13px',
+                            borderBottomLeftRadius: { md: '0px', xs: '13px' },
+                            // overflow: 'scroll !important',
+                            height: '100% !important',
+                            maxHeight: { md: 'unset !important', xs: '350px' }
+                        }}
+                    >
+                        <Typography variant='h4' sx={{
+                            textAlign: "center",
+                            fontWeight: 'bold',
+                            margin: 'unset !important',
+                            marginTop: { xs: '50px', md: '0px' },
+                            marginBottom: { xs: '15px !important', md: '65px !important' }
                         }}>
-                            <h1 style={{ textAlign: "center" }}>Baixe agora o app Radioteraquiz!</h1>
-                            <Box sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                alignItems: 'flex-start',
-                                maxWidth: '270px'
-                            }}>
-                                <p style={{ fontWeight: 'bold', marginBottom: '0px' }}>Inscreva-se gratuitamente!</p>
-                                <p style={{ color: '#718096', marginTop: '15px' }}>Faça o cadastro no app e receba gratuitamente 7 dias para testar!</p>
-                            </Box>
-                            <Box sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                alignItems: 'flex-start',
-                                maxWidth: '270px'
-                            }}>
-                                <p style={{ fontWeight: 'bold', marginBottom: '0px' }}>Inscreva-se gratuitamente!</p>
-                                <p style={{ color: '#718096', marginTop: '15px' }}>Faça o cadastro no app e receba gratuitamente 7 dias para testar!</p>
-                            </Box>
-                            <Box sx={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                justifyContent: 'space-between',
-                                alignItems: 'center',
-                                width: '100%',
-                                maxWidth: '270px',
-                                marginTop: "50px"
-                            }}>
-                                <img style={{ width: '100%', maxWidth: '125px' }} src={googleIcon} />
-                                <img style={{ width: '100%', maxWidth: '125px' }} src={iosIcon} />
-                            </Box>
-                        </Grid>
+                            Baixe agora o<br />app Radioteraquiz!
+                        </Typography>
+                        <Box sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: { md: 'flex-start', xs: 'center' },
+                            maxWidth: '270px'
+                        }}>
+                            <Typography variant='p'
+                                sx={{
+                                    fontWeight: 'bold',
+                                    marginBottom: '10px',
+                                    textAlign: { md: 'start', xs: 'center' },
+
+                                }}>Inscreva-se gratuitamente!</Typography>
+                            <Typography variant='p'
+                                sx={{
+                                    color: '#718096',
+                                    textAlign: { md: 'start', xs: 'center' },
+                                }}>Faça o cadastro no app e começe agora sua jornada de estudos com o Radioteraquiz!</Typography>
+                        </Box>
+                        <Box sx={{
+                            display: 'flex',
+                            flexDirection: { sm: 'row', xs: 'column' },
+                            justifyContent: { sm: 'space-between', xs: 'center' },
+                            alignItems: 'center',
+                            width: '100%',
+                            maxWidth: '270px',
+                            marginTop: { md: "50px", xs: '15px' }
+                        }}>
+                            <img style={{ width: '100%', maxWidth: '125px', marginBottom: '20px' }} src={googleIcon} />
+                            <img style={{ width: '100%', maxWidth: '125px', marginBottom: '20px' }} src={iosIcon} />
+                        </Box>
                     </Grid>
-                </Box>
+                </Grid>
             </Modal>
 
-            {/* //TESTE */}
+
+            {/* NEW MODAL CONTATO */}
             <Modal
+                open={openContato}
+                onClose={handleCloseContato}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                BackdropComponent={Backdrop}
+                style={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}
+            >
+                <Grid container
+                    sx={{
+                        backgroundColor: "white",
+                        width: '100%',
+                        maxWidth: '1000px',
+                        height: '80%',
+                        display: 'flex',
+                        margin: '10% 10%',
+                        borderRadius: '13px',
+                    }}
+                >
+                    <Grid item md={6} xs={12}
+                        sx={{
+                            // background: 'radial-gradient(at 50% 50%, rgba(255,166,0,1) 0%, rgba(249,115,22,1) 80%)',
+                            borderTopLeftRadius: '13px',
+                            borderTopRightRadius: { md: '0px', xs: '13px' },
+                            borderBottomLeftRadius: { md: '13px', xs: '0px' },
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            overflow: 'hidden',
+                            position: 'relative',
+                            minHeight: '200px',
+                            maxHeight:{xs:'200px', md:'none'}
+                        }}>
+                        <img
+                            className='contact__img'
+                            style={{
+                                width:'100% !important',
+                                top:'0px'
+                            }}
+                            src={modalContact}
+
+                        />
+                    </Grid>
+
+                    <Grid item md={6} xs={12}
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'flex-start',
+                            backgroundColor: 'white',
+                            borderTopRightRadius: { md: '13px', xs: '0px' },
+                            borderBottomRightRadius: '13px',
+                            borderBottomLeftRadius: { md: '0px', xs: '13px' },
+                            overflowY: {xs:'scroll !important', md:'hidden !important'},
+                            height: '100% !important',
+                            maxHeight: { md: 'unset !important', xs: '350px' }
+                        }}>
+                        <Box sx={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'flex-start',
+                            marginTop: '25px',
+
+                        }}>
+                            <ThemeProvider theme={contatoTheme} >
+                                <a onClick={handleIsContact} style={{ padding: '0px 25px' }} className={`contact__underline ${isContact ? ('active') : (null)}`}>
+                                    <Typography variant='subtitle1'>
+                                        Mensagem
+                                    </Typography>
+                                </a>
+                            </ThemeProvider>
+                            <ThemeProvider theme={contatoTheme}>
+                                <a onClick={handleIsMessage} style={{ padding: '0px 25px' }} className={`contact__underline ${!isContact ? ('active') : (null)}`}>
+                                    <Typography variant='subtitle1'>
+                                        Contato
+                                    </Typography>
+                                </a>
+                            </ThemeProvider>
+                        </Box>
+                        {isContact ? (
+                            <Box 
+                            sx={{
+                                display:'flex',
+                                flexDirection:'column'
+                        }}
+                            >
+                                <Box sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    maxWidth: '270px',
+                                    textAlign: 'center',
+                                    margin: '25px auto',
+
+                                }}>
+                                    <h1 style={{ marginBottom: '25px' }}>Fale Conosco</h1>
+                                    <p style={{ maxWidth: '270px', marginTop: '0px', margin:'0px 10px' }}>Está precisando de ajuda? Responderemos o seu contato o mais breve possível!</p>
+                                </Box>
+                                <Box
+                                    ref={form}
+                                    onSubmit={sendEmail}
+                                    component='form'
+                                    noValidate
+                                    autoComplete='off'
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        width: '100%',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        marginBottom: '25px'
+                                    }}
+                                >
+                                    <TextField
+                                        name='name'
+                                        className='contact__input'
+                                        required
+                                        // id="outlined-required"
+                                        placeholder='Seu Nome'
+                                        variant='filled'
+                                        InputProps={{
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <FeatherIcon icon='user' style={{ color: '#FFA929' }} />
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                    >
+                                    </TextField>
+                                    <TextField
+                                        name='email'
+                                        className='contact__input'
+                                        required
+                                        // id="outlined-required"
+                                        placeholder='Seu email'
+                                        variant='filled'
+                                        InputProps={{
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <FeatherIcon icon='mail' style={{ color: '#FFA929' }} />
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                    >
+                                    </TextField>
+                                    <TextField
+                                        name='subject'
+                                        className='contact__input'
+                                        required
+                                        // id="outlined-required"
+                                        placeholder='Assunto'
+                                        variant='filled'
+                                        InputProps={{
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <FeatherIcon icon='message-circle' style={{ color: '#FFA929' }} />
+                                                </InputAdornment>
+                                            ),
+                                        }}
+                                    >
+                                    </TextField>
+                                    <TextareaAutosize
+                                        name='message'
+                                        className='contact__textarea'
+                                        minRows={3}
+                                        placeholder="Sua Mensagem"
+                                        style={{ width: '80%', marginBottom: '20px' }}
+                                    />
+                                    <Button type='submit' className='btn-styled' style={{ width: '100%', maxWidth: '200px' }}> Enviar </Button>
+                                </Box>
+                            </Box>
+                        ) : (
+                            <Box sx={{
+                                display:'flex',
+                                flexDirection:"column"
+                            }}>
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        maxWidth: '270px',
+                                        textAlign: 'center',
+                                        margin: '25px auto',
+                                        height:'100%'
+                                    }}
+                                >
+                                    <Typography variant='h3' sx={{ marginBottom: "25px", fontWeight:'bold', marginTop:'25px' }}>
+                                        Informações <br /> de contato
+                                    </Typography>
+                                    <p style={{ marginTop: '0px', margin:'0px 10px' }}>
+                                        Você pode entrar em contato conosco através dos endereços abaixo!
+                                    </p>
+                                </Box>
+                                <Box sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    margin: '0 auto',
+                                    maxWidth: '300px',
+                                    justifyContent:'flex-start'
+                                }}>
+                                    <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
+                                        <MailOutlineIcon sx={{ color: '#FF8635' }} />
+                                        <Typography variant='p' sx={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748', overflowWrap:'break-word'  }}>
+                                            contato@radioteraquiz.com.br
+                                        </Typography>
+                                    </a>
+                                    <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
+                                        <InstagramIcon sx={{ color: '#FF8635' }} />
+                                        <Typography variant='p' sx={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748' }}>
+                                            @radioteraquiz
+                                        </Typography>
+                                    </a>
+                                    <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
+                                        <LinkedInIcon sx={{ color: '#FF8635' }} />
+                                        <Typography variant='p' sx={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748' }}>
+                                            Radioteraquiz
+                                        </Typography>
+                                    </a>
+
+                                </Box>
+                            </Box>
+                        )}
+                    </Grid>
+
+                    {/* <Grid item md={6} xs={12}
+                        sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundColor: 'white',
+                            borderTopRightRadius: { md: '13px', xs: '0px' },
+                            borderBottomRightRadius: '13px',
+                            borderBottomLeftRadius: { md: '0px', xs: '13px' },
+                            // overflow: 'scroll !important',
+                            height: '100% !important',
+                            maxHeight: { md: 'unset !important', xs: '350px' }
+                        }}
+                    >
+                        <Typography variant='h4' sx={{
+                            textAlign: "center",
+                            fontWeight: 'bold',
+                            margin: 'unset !important',
+                            marginTop: { xs: '50px', md: '0px' },
+                            marginBottom: { xs: '15px !important', md: '65px !important' }
+                        }}>
+                            Baixe agora o<br />app Radioteraquiz!
+                        </Typography>
+                        <Box sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center',
+                            alignItems: { md: 'flex-start', xs: 'center' },
+                            maxWidth: '270px'
+                        }}>
+                            <Typography variant='p'
+                                sx={{
+                                    fontWeight: 'bold',
+                                    marginBottom: '10px',
+                                    textAlign: { md: 'start', xs: 'center' },
+
+                                }}>Inscreva-se gratuitamente!</Typography>
+                            <Typography variant='p'
+                                sx={{
+                                    color: '#718096',
+                                    textAlign: { md: 'start', xs: 'center' },
+                                }}>Faça o cadastro no app e começe agora sua jornada de estudos com o Radioteraquiz!</Typography>
+                        </Box>
+                        <Box sx={{
+                            display: 'flex',
+                            flexDirection: { sm: 'row', xs: 'column' },
+                            justifyContent: { sm: 'space-between', xs: 'center' },
+                            alignItems: 'center',
+                            width: '100%',
+                            maxWidth: '270px',
+                            marginTop: { md: "50px", xs: '15px' }
+                        }}>
+                            <img style={{ width: '100%', maxWidth: '125px', marginBottom: '20px' }} src={googleIcon} />
+                            <img style={{ width: '100%', maxWidth: '125px', marginBottom: '20px' }} src={iosIcon} />
+                        </Box>
+                    </Grid> */}
+                </Grid>
+            </Modal>
+
+            {/* MODAL CONTATO */}
+            {/* <Modal
                 open={openContato}
                 onClose={handleCloseContato}
                 aria-labelledby="modal-modal-title"
@@ -443,7 +753,7 @@ export default function Header(e) {
                                 <Box sx={{
                                     display: 'flex',
                                     flexDirection: 'column',
-                                    margin:'0 auto',
+                                    margin: '0 auto',
                                     maxWidth: '300px',
                                 }}>
                                     <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
@@ -470,204 +780,9 @@ export default function Header(e) {
                         )}
                     </Grid>
                 </Grid>
-            </Modal>
-
-            {/* MODAL CONTATO */}
-            {/* <Modal
-                open={openContato}
-                onClose={handleCloseContato}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-                BackdropComponent={Backdrop}
-            >
-                <Box sx={style}>
-                    <Grid container>
-                        <Grid item lg={6}>
-                            <Box sx={{
-                                position: 'relative',
-                            }}>
-                                <Box sx={{
-                                    position: 'absolute',
-                                    top: '0px',
-                                    left: '0px',
-                                    overflowX: 'hidden',
-                                    overflowY: 'hidden',
-                                    width: '100%',
-                                }}>
-                                    <img className='img-teste' style={{
-                                        width: 'auto',
-                                        height: '750px',
-                                        borderTopLeftRadius: '13px',
-                                        borderBottomLeftRadius: '13px',
-                                        objectFit: 'contain',
-                                        left: "-50px"
-                                    }}
-                                        src={modalContact} />
-                                </Box>
-                            </Box>
-                        </Grid>
-                        <Grid item lg={6} sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            margin: '30px 0px'
-                        }}>
-                            <Grid container spacing={2} sx={{
-                                display: 'flex',
-                                flexDirection: 'row',
-                                justifyContent: 'center'
-                            }}>
-                                <Grid item>
-                                    <ThemeProvider theme={contatoTheme}>
-                                        <a onClick={handleIsContact}>
-                                            <Typography variant='subtitle1'>
-                                                Mensagem
-                                            </Typography>
-                                        </a>
-                                    </ThemeProvider>
-                                </Grid>
-                                <Grid item>
-                                    <ThemeProvider theme={contatoTheme}>
-                                        <a onClick={handleIsMessage}>
-                                            <Typography variant='subtitle1'>
-                                                Contato
-                                            </Typography>
-                                        </a>
-                                    </ThemeProvider>
-                                </Grid>
-                            </Grid>
-                            {isContact ? (
-                                <>
-                                    <Box sx={{
-                                        display: 'flex',
-                                        flexDirection: 'column',
-                                        justifyContent: 'center',
-                                        maxWidth: '270px',
-                                        textAlign: 'center'
-                                    }}>
-                                        <h1 style={{ marginBottom: '0px' }}>Fale Conosco</h1>
-                                        <p style={{ maxWidth: '270px', marginTop: '0px' }}>Está precisando de ajuda? Responderemos o seu contato o mais breve possível!</p>
-                                    </Box>
-                                    <Box
-                                        ref={form}
-                                        onSubmit={sendEmail}
-                                        component='form'
-                                        noValidate
-                                        autoComplete='off'
-                                        sx={{
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            width: '100%',
-                                            justifyContent: 'center',
-                                            alignItems: 'center'
-                                        }}
-                                    >
-                                        <TextField
-                                            name='name'
-                                            className='contact__input'
-                                            required
-                                            // id="outlined-required"
-                                            placeholder='Seu Nome'
-                                            variant='filled'
-                                            InputProps={{
-                                                startAdornment: (
-                                                    <InputAdornment position="start">
-                                                        <AccountCircle />
-                                                    </InputAdornment>
-                                                ),
-                                            }}
-                                        >
-                                        </TextField>
-                                        <TextField
-                                            name='email'
-                                            className='contact__input'
-                                            required
-                                            // id="outlined-required"
-                                            placeholder='Seu email'
-                                            variant='filled'
-                                            InputProps={{
-                                                startAdornment: (
-                                                    <InputAdornment position="start">
-                                                        <AccountCircle />
-                                                    </InputAdornment>
-                                                ),
-                                            }}
-                                        >
-                                        </TextField>
-                                        <TextField
-                                            name='subject'
-                                            className='contact__input'
-                                            required
-                                            // id="outlined-required"
-                                            placeholder='Assunto'
-                                            variant='filled'
-                                            InputProps={{
-                                                startAdornment: (
-                                                    <InputAdornment position="start">
-                                                        <AccountCircle />
-                                                    </InputAdornment>
-                                                ),
-                                            }}
-                                        >
-                                        </TextField>
-                                        <TextareaAutosize
-                                            name='message'
-                                            className='contact__textarea'
-                                            minRows={3}
-                                            placeholder="Sua Mensagem"
-                                            style={{ width: '80%', marginBottom: '20px' }}
-                                        />
-                                        <Button type='submit' className='btn-styled' style={{ width: '100%', maxWidth: '200px' }}> Enviar </Button>
-                                    </Box>
-                                </>
-                            ) : (
-                                <>
-                                    <Box
-                                        sx={{
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            justifyContent: 'center',
-                                            maxWidth: '270px',
-                                            textAlign: 'center',
-                                            height: '100%',
-                                            maxHeight: '750px',
-                                            marginBottom: '25px'
-                                        }}
-                                    >
-                                        <h1 style={{ marginBottom: "25px" }}>
-                                            Informações <br /> de contato
-                                        </h1>
-                                        <p style={{ marginTop: '0px' }}>
-                                            Have some feedback for us? Give us a call or send an email.
-                                        </p>
-                                    </Box>
-                                    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                                        <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
-                                            <MailOutlineIcon sx={{ color: '#FF8635' }} />
-                                            <p style={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748' }}>
-                                                contato@radioteraquiz.com.br
-                                            </p>
-                                        </a>
-                                        <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
-                                            <InstagramIcon sx={{ color: '#FF8635' }} />
-                                            <p style={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748' }}>
-                                                @radioteraquiz
-                                            </p>
-                                        </a>
-                                        <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
-                                            <LinkedInIcon sx={{ color: '#FF8635' }} />
-                                            <p style={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748' }}>
-                                                Radioteraquiz
-                                            </p>
-                                        </a>
-
-                                    </Box>
-                                </>
-                            )}
-                        </Grid>
-                    </Grid>
-                </Box>
             </Modal> */}
-        </Container>
+
+
+        </Container >
     );
 }

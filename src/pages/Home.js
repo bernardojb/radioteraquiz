@@ -13,7 +13,7 @@ export default function Home() {
             <Intro />
             <Funcionamento />
             <Gamification />
-            <Planos />
+            {/* <Planos /> */}
             <FAQ />
         </>
     );

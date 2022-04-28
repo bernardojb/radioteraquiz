@@ -15,6 +15,10 @@ html{
   scroll-behavior: smooth;
 }
 
+#root{
+  overflow-x: hidden !important;
+}
+
 body {
   margin: 0;
   font-family: "Poppins", sans-serif !important;
@@ -32,8 +36,17 @@ body {
   text-transform: none !important;
   padding: 0px 10px !important;
   height: 40px !important;
+  width: 150px !important;
   text-decoration: none !important;
   font-family: "Poppins", sans-serif !important;
+  transform: scale(1) !important;
+  transition: 0.2s ease !important;
+
+  &:hover{
+    // color:#ff9955 !important;
+    transform: scale(1.1) !important;
+    transition: 0.2s ease !important;
+  }
 }
 
 // code {
