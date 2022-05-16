@@ -67,7 +67,7 @@ export default function Footer() {
                         <p style={{ fontWeight: 'bold', marginTop: '0px' }}>Informações</p>
                         <Box>
                             <a href="#sobre-o-app">
-                                <p>Como Funciona</p>
+                                <p>Sobre o app</p>
                             </a>
                             {/* <a href='#planos'>
                                 <p>Planos</p>

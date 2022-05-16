@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Grid, Container, Button, Box } from '@mui/material'
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -8,27 +8,34 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FeatherIcon from 'feather-icons-react'
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
 
+import HandleModal from '../1-Intro/TesteModal';
+
+
 export default function FAQ() {
     const [expanded, setExpanded] = React.useState(false);
 
     const handleChange = (panel) => (event, isExpanded) => {
         setExpanded(isExpanded ? panel : false);
     };
+
+    
+    const { openModal, modalOpen } = HandleModal()
+
     return (
         <motion.div
-        initial='hidden'
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-            visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                    duration: 0.5,
-                }
-            },
-            hidden: { opacity: 0, y: 100 }
-        }}
+            initial='hidden'
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+                visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                        duration: 0.5,
+                    }
+                },
+                hidden: { opacity: 0, y: 100 }
+            }}
         >
             <Container maxWidth='md' className='faq' id='faq'>
                 <Grid container spacing={2} className='faq__container'
@@ -41,12 +48,13 @@ export default function FAQ() {
                     <Grid item >
                         <Box sx={{
                             textAlign: 'center',
-                            display:'flex',
-                            flexDirection:'column'
+                            display: 'flex',
+                            flexDirection: 'column'
                         }}>
-                            <Typography variant='p' sx={{ fontWeight: 'bold', color: "#FF8635", marginBottom:'20px' }}>Ajuda</Typography>
-                            <Typography variant='h3' sx={{ fontWeight:'bold', marginBottom:'40px' }}>Perguntas frequentes</Typography>
-                            <Typography variant='p' sx={{ marginBottom:'40px' }}>Caso precise de suporte adicional, <a href='#' style={{ fontWeight: 'bold', color: "#FF8635", textDecoration: 'underline' }}>entre em contato</a></Typography>
+                            {/* <p>{`TESTE ${modalOpen}`}</p> */}
+                            <Typography variant='p' sx={{ fontWeight: 'bold', color: "#FF8635", marginBottom: '20px' }}>Ajuda</Typography>
+                            <Typography variant='h3' sx={{ fontWeight: 'bold', marginBottom: '40px' }}>Perguntas frequentes</Typography>
+                            <Typography variant='p' sx={{ marginBottom: '40px' }}>Caso precise de suporte adicional, <a onClick={openModal} style={{ fontWeight: 'bold', color: "#FF8635", textDecoration: 'underline', cursor:'pointer' }}>entre em contato</a></Typography>
                         </Box>
                     </Grid>
                     <Grid item >
@@ -57,7 +65,13 @@ export default function FAQ() {
                                 id="panel1bh-header"
                             >
                                 <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color: '#2D3748' }}>
-                                    <FeatherIcon icon='activity' style={{ color: '#FFA929', margin: '0px 20px' }} />
+                                    <Box sx={{
+                                        display:'flex',
+                                        justifyContent:'center',
+                                        alignItems:'center'
+                                    }}>
+                                        <FeatherIcon icon='dollar-sign' size="24" style={{ color: '#FFA929', padding: '0px 20px' }} />
+                                    </Box>
                                     O app possui algum tipo de assinatura paga?
                                 </Typography>
                             </AccordionSummary>
@@ -73,15 +87,22 @@ export default function FAQ() {
                                 aria-controls="panel2bh-content"
                                 id="panel2bh-header"
                             >
+
                                 <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color: '#2D3748' }}>
-                                    <FeatherIcon icon='activity' style={{ color: '#FFA929', margin: '0px 20px' }} />
+                                    <Box sx={{
+                                        display:'flex',
+                                        justifyContent:'center',
+                                        alignItems:'center'
+                                    }}>
+                                        <FeatherIcon icon='clock' size="24" style={{ color: '#FFA929', margin: '0px 20px' }} />
+                                    </Box>
                                     Qual a frequência de atualizações dos conteúdos?
                                 </Typography>
 
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                   O app conta com um banco de questões que estará sempre em constante evolução, mas não possui uma frequência fixa de atualizações. Prezamos pela qualidade e integridade dos conteúdos, não pelo volume.
+                                    O app conta com um banco de questões que estará sempre em constante evolução, mas não possui uma frequência fixa de atualizações. Prezamos pela qualidade e integridade dos conteúdos, não pelo volume.
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -91,14 +112,20 @@ export default function FAQ() {
                                 aria-controls="panel3bh-content"
                                 id="panel3bh-header">
                                 <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color: '#2D3748' }}>
-                                    <FeatherIcon icon='activity' style={{ color: '#FFA929', margin: '0px 20px' }} />
+                                    <Box sx={{
+                                        display:'flex',
+                                        justifyContent:'center',
+                                        alignItems:'center'
+                                    }}>
+                                        <FeatherIcon icon='smartphone' size="24" style={{ color: '#FFA929', margin: '0px 20px' }} />
+                                    </Box>
                                     Que tipo de conteúdos estão presentes no app?
                                 </Typography>
 
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
-                                O app é um assistente de estudos que possui um Quizz interativo, com perguntas e respostas justificadas sobre todo universo de Radioterapia. Questões das últimas provas de especialização, casos e muito mais. 
+                                    O app é um assistente de estudos que possui um Quizz interativo, com perguntas e respostas justificadas sobre todo universo de Radioterapia. Questões das últimas provas de especialização, casos e muito mais.
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
@@ -109,18 +136,24 @@ export default function FAQ() {
                                 id="panel4bh-header"
                             >
                                 <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color: '#2D3748' }}>
-                                    <FeatherIcon icon='activity' style={{ color: '#FFA929', margin: '0px 20px' }} />
+                                    <Box sx={{
+                                        display:'flex',
+                                        justifyContent:'center',
+                                        alignItems:'center'
+                                    }}>
+                                        <FeatherIcon icon='download' size="24" style={{ color: '#FFA929', margin: '0px 20px' }} />
+                                    </Box>
                                     Onde eu consigo fazer o download do app?
                                 </Typography>
                             </AccordionSummary>
                             <AccordionDetails>
                                 <Typography>
                                     O app está disponível para download nas plataformas Android e iOS. Só clicar em um dos links abaixo e você será redirecionado para a Store!
-                                    <br/>
-                                    <br/>
-                                    <a href='#' style={{color:'#FFA929'}}>Google Play Store (Android)</a>
-                                    <br/>
-                                    <a href='#' style={{color:'#FFA929'}}>App Store (iOS) </a>
+                                    <br />
+                                    <br />
+                                    <a href='#' style={{ color: '#FFA929' }}>Google Play Store (Android)</a>
+                                    <br />
+                                    <a href='#' style={{ color: '#FFA929' }}>App Store (iOS) </a>
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>

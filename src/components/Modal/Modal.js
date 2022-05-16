@@ -38,6 +38,9 @@ import emailjs from 'emailjs-com'
 import MenuIcon from '@mui/icons-material/Menu';
 import { height } from '@mui/system';
 
+//
+import HandleModal from '../1-Intro/TesteModal';
+
 const Backdrop = styled('div')`
   z-index: -1;
   position: fixed;
@@ -61,149 +64,16 @@ contatoTheme.typography.subtitle1 = {
     },
 };
 
-export default function Header(e) {
 
-    //Header sticky
-    const [isSticky, setIsSticky] = useState()
-    window.addEventListener('scroll', function () {
-        var value = window.scrollY;
-        var innerWidth = window.innerWidth
-        if (value > 120 || innerWidth < 900) {
-            document.querySelector('.header').classList.add('sticky')
-            setIsSticky(true)
-        } else {
-            document.querySelector('.header').classList.remove('sticky')
-            setIsSticky(false)
-        }
-    });
-
-    //Emailjs
-    const form = useRef();
-    const sendEmail = (e) => {
-        e.preventDefault();
-
-        emailjs.sendForm('emailMessage', 'template_j58aq2e', form.current, 'user_RcZXxALTePHJXYxrX0PcV')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
-    };
-
-    //Header
-    const [state, setState] = useState({
-        mobileView: false,
-    });
-
-    const { mobileView } = state;
-
-    useEffect(() => {
-        const setResponsiveness = () => {
-            return window.innerWidth < 900
-                ? setState((prevState) => ({ ...prevState, mobileView: true }),
-                    document.querySelector('.header').classList.add('sticky'),
-                    setIsSticky(true))
-                : setState((prevState) => ({ ...prevState, mobileView: false }),
-                    document.querySelector('.header').classList.remove('sticky'),
-                    setIsSticky(false));
-        };
-        setResponsiveness();
-        window.addEventListener("resize", () => setResponsiveness());
-
-        return () => {
-            window.removeEventListener("resize", () => setResponsiveness());
-        }
-    }, []);
-
-    //Modal
-    const [open, setOpenDownload] = useState(false);
-    const handleOpenDownload = () => {
-        setOpenDownload(true);
-        setOpenHeader(openHeader ? false : true)
-    }
-    const handleCloseDownload = () => setOpenDownload(false);
-
-    const [openContato, setOpenContato] = useState(false);
-    const handleOpenContato = () => {
-        setOpenContato(true);
-        setOpenHeader(openHeader ? false : true)
-    }
-    
-    const handleCloseContato = () => setOpenContato(false);
-
-    const [isContact, setIsContact] = useState(true)
-    const handleIsContact = () => setIsContact(true)
-    const handleIsMessage = () => setIsContact(false)
-
-    const [openHeader, setOpenHeader] = useState(false)
-    const handleHeaderOpen = () => {
-        setOpenHeader(openHeader ? false : true)
-    }
+export default function ModalFinal() {
+    const { openModal, modalOpen } = HandleModal()
 
     return (
-        <Container className='header' maxWidth='false' >
-            <Grid className='header__container' maxWidth='lg' container spacing={0} >
-                <Grid className='header__logo' item >
-                    {isSticky ?
-                        (
-                            <a href='https://radioteraquiz.com.br/' style={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center'
-                            }}>
-                                <img src={logoDefault} />
-                            </a>
-                        ) :
-                        (
-                            <a href='https://radioteraquiz.com.br/' style={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center'
-                            }}>
-                                <img src={logoWhite} />
-                            </a>
-                        )}
-                </Grid>
-
-                {mobileView ? (
-                    <>
-                        <Grid className='header__downloadBtn'>
-                            <Button onClick={handleHeaderOpen}>
-                                <MenuIcon sx={{ color: '#2d3748', fontSize: '35px' }} />
-                            </Button>
-                        </Grid>
-                        {openHeader ? (
-                            <Grid className='header--mobile'>
-                                <a href="#sobre-o-app" onClick={handleHeaderOpen}>Sobre o app</a>
-                                <a href="#faq" onClick={handleHeaderOpen}>FAQ</a>
-                                <Link to="" onClick={handleOpenContato}>Contato</Link>
-                                <Link to="" onClick={handleOpenDownload}>Download</Link>
-                            </Grid>) :
-                            (null)}
-
-                    </>
-                ) : (
-                    <>
-                        <Grid className='header__navLinks' item >
-                            <a className='header__navlink' href='#sobre-o-app'>Sobre o app</a>
-                            <a className='header__navlink' href='#faq'>FAQ</a>
-                            <Link className='header__navlink' to="" onClick={handleOpenContato}>Contato</Link>
-                        </Grid>
-                        <Grid className='header__downloadBtn'>
-                            <Button onClick={handleOpenDownload} className='btn-styled' style={{ fontSize: '14px', fontWeight: 'bold' }}>
-                                Download
-                            </Button>
-                        </Grid>
-                    </>
-                )}
-
-            </Grid>
-
-
+        <>
             {/* MODAL DOWNLOAD */}
             <Modal
-                open={open}
-                onClose={handleCloseDownload}
+                open={modalOpen}
+                onClose={openModal}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
                 BackdropComponent={Backdrop}
@@ -304,7 +174,7 @@ export default function Header(e) {
 
 
             {/* MODAL CONTATO */}
-            <Modal
+            {/* <Modal
                 open={openContato}
                 onClose={handleCloseContato}
                 aria-labelledby="modal-modal-title"
@@ -322,11 +192,11 @@ export default function Header(e) {
                         width: '100%',
                         maxWidth: '1000px',
                         height: '80vh',
-                        maxHeight:'1000px',
+                        maxHeight: '1000px',
                         display: 'flex',
                         margin: '10% 10%',
                         borderRadius: '13px',
-                        overflowY:{ xs:'scroll !important', md:'hidden !important' }
+                        overflowY: { xs: 'scroll !important', md: 'hidden !important' }
                     }}
                 >
                     <Grid item md={6} xs={12}
@@ -364,7 +234,7 @@ export default function Header(e) {
                             borderTopRightRadius: { md: '13px', xs: '0px' },
                             borderBottomRightRadius: '13px',
                             borderBottomLeftRadius: { md: '0px', xs: '13px' },
-                            overflow:'hidden'
+                            overflow: 'hidden'
                             // height: '100% !important',
                             // maxHeight: { md: 'unset !important', xs: '350px' }
                         }}>
@@ -377,14 +247,14 @@ export default function Header(e) {
 
                         }}>
                             <ThemeProvider theme={contatoTheme} >
-                                <a onClick={handleIsContact} style={{ padding: '0px 25px', cursor:'pointer' }} className={`contact__underline ${isContact ? ('active') : (null)}`}>
+                                <a onClick={handleIsContact} style={{ padding: '0px 25px', cursor: 'pointer' }} className={`contact__underline ${isContact ? ('active') : (null)}`}>
                                     <Typography variant='subtitle1'>
                                         Mensagem
                                     </Typography>
                                 </a>
                             </ThemeProvider>
                             <ThemeProvider theme={contatoTheme}>
-                                <a onClick={handleIsMessage} style={{ padding: '0px 25px', cursor:'pointer' }} className={`contact__underline ${!isContact ? ('active') : (null)}`}>
+                                <a onClick={handleIsMessage} style={{ padding: '0px 25px', cursor: 'pointer' }} className={`contact__underline ${!isContact ? ('active') : (null)}`}>
                                     <Typography variant='subtitle1'>
                                         Contato
                                     </Typography>
@@ -397,9 +267,9 @@ export default function Header(e) {
                                     display: 'flex',
                                     flexDirection: 'column',
                                     width: '100%',
-                                    justifyContent:'flex-start',
-                                    alignItems:'center',
-                                    height:'100%',
+                                    justifyContent: 'flex-start',
+                                    alignItems: 'center',
+                                    height: '100%',
                                 }}
                             >
                                 <Box sx={{
@@ -517,7 +387,7 @@ export default function Header(e) {
                                 }}>
                                     <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
                                         <MailOutlineIcon sx={{ color: '#FF8635' }} />
-                                        <Typography variant='p' sx={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748', fontSize:{xs:'12px !important', sm:'unset !important'} }}>
+                                        <Typography variant='p' sx={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748', fontSize: { xs: '12px !important', sm: 'unset !important' } }}>
                                             contato@radioteraquiz.com.br
                                         </Typography>
                                     </a>
@@ -538,67 +408,8 @@ export default function Header(e) {
                             </Box>
                         )}
                     </Grid>
-
-                    {/* <Grid item md={6} xs={12}
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: 'white',
-                            borderTopRightRadius: { md: '13px', xs: '0px' },
-                            borderBottomRightRadius: '13px',
-                            borderBottomLeftRadius: { md: '0px', xs: '13px' },
-                            // overflow: 'scroll !important',
-                            height: '100% !important',
-                            maxHeight: { md: 'unset !important', xs: '350px' }
-                        }}
-                    >
-                        <Typography variant='h4' sx={{
-                            textAlign: "center",
-                            fontWeight: 'bold',
-                            margin: 'unset !important',
-                            marginTop: { xs: '50px', md: '0px' },
-                            marginBottom: { xs: '15px !important', md: '65px !important' }
-                        }}>
-                            Baixe agora o<br />app Radioteraquiz!
-                        </Typography>
-                        <Box sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            justifyContent: 'center',
-                            alignItems: { md: 'flex-start', xs: 'center' },
-                            maxWidth: '270px'
-                        }}>
-                            <Typography variant='p'
-                                sx={{
-                                    fontWeight: 'bold',
-                                    marginBottom: '10px',
-                                    textAlign: { md: 'start', xs: 'center' },
-
-                                }}>Inscreva-se gratuitamente!</Typography>
-                            <Typography variant='p'
-                                sx={{
-                                    color: '#718096',
-                                    textAlign: { md: 'start', xs: 'center' },
-                                }}>Faça o cadastro no app e começe agora sua jornada de estudos com o Radioteraquiz!</Typography>
-                        </Box>
-                        <Box sx={{
-                            display: 'flex',
-                            flexDirection: { sm: 'row', xs: 'column' },
-                            justifyContent: { sm: 'space-between', xs: 'center' },
-                            alignItems: 'center',
-                            width: '100%',
-                            maxWidth: '270px',
-                            marginTop: { md: "50px", xs: '15px' }
-                        }}>
-                            <img style={{ width: '100%', maxWidth: '125px', marginBottom: '20px' }} src={googleIcon} />
-                            <img style={{ width: '100%', maxWidth: '125px', marginBottom: '20px' }} src={iosIcon} />
-                        </Box>
-                    </Grid> */}
                 </Grid>
-            </Modal>
-
-        </Container >
-    );
+            </Modal> */}
+        </>
+    )
 }

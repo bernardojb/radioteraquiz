@@ -15,10 +15,14 @@ import Header from './components/Header/Header'
 import Home from './pages/Home'
 import Footer from './components/Footer/Footer'
 
+//Modal
+import Modal from "./components/Modal/Modal";
+
 function App() {
   return (
     <BrowserRouter>
       <Header />
+      <Modal />
       <Routes>
         <Route index path="/" element={<Home/>} />
         <Route element={<Home/>} />

@@ -8,9 +8,10 @@ import phoneIntro from '../../assets/radio-intro.png'
 import iosIcon from '../../assets/ios.svg'
 import googleIcon from '../../assets/googlePlay.svg'
 
-export default function Intro() {
 
-    return (
+export default function Intro() {
+return (
+
         <Container maxWidth='lg' className='intro' sx={{
             paddingTop: { xs: '50px', md: '50px' },
             paddingBottom: { xs: '50px', md: '100px' },
