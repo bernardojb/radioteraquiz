@@ -1,15 +1,16 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Grid, Container, Button, Box } from '@mui/material'
 import Accordion from '@mui/material/Accordion';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import FeatherIcon from 'feather-icons-react'
 import { motion, useAnimation, AnimatePresence } from "framer-motion";
-
 import HandleModal from '../1-Intro/TesteModal';
 
+import FeatherIcon from 'feather-icons-react'
+import AppleIcon from '@mui/icons-material/Apple';
+import AndroidIcon from '@mui/icons-material/Android';
 
 export default function FAQ() {
     const [expanded, setExpanded] = React.useState(false);
@@ -18,7 +19,7 @@ export default function FAQ() {
         setExpanded(isExpanded ? panel : false);
     };
 
-    
+
     const { openModal, modalOpen } = HandleModal()
 
     return (
@@ -54,7 +55,8 @@ export default function FAQ() {
                             {/* <p>{`TESTE ${modalOpen}`}</p> */}
                             <Typography variant='p' sx={{ fontWeight: 'bold', color: "#FF8635", marginBottom: '20px' }}>Ajuda</Typography>
                             <Typography variant='h3' sx={{ fontWeight: 'bold', marginBottom: '40px' }}>Perguntas frequentes</Typography>
-                            <Typography variant='p' sx={{ marginBottom: '40px' }}>Caso precise de suporte adicional, <a onClick={openModal} style={{ fontWeight: 'bold', color: "#FF8635", textDecoration: 'underline', cursor:'pointer' }}>entre em contato</a></Typography>
+                            <Typography variant='p' sx={{ marginBottom: '40px' }}>
+                                Caso precise de suporte adicional, entre em contato pelo email <a href='mailto:contato@radioteraquiz.com.br' style={{ fontWeight: 'bold', color: "#FF8635", textDecoration: 'underline', cursor: 'pointer' }}> contato@radioteraquiz.com.br</a></Typography>
                         </Box>
                     </Grid>
                     <Grid item >
@@ -66,16 +68,23 @@ export default function FAQ() {
                             >
                                 <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color: '#2D3748' }}>
                                     <Box sx={{
-                                        display:'flex',
-                                        justifyContent:'center',
-                                        alignItems:'center'
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center'
                                     }}>
-                                        <FeatherIcon icon='dollar-sign' size="24" style={{ color: '#FFA929', padding: '0px 20px' }} />
+                                        <FeatherIcon icon='shopping-cart' size="24" style={{ color: '#FFA929', padding: '0px 20px' }} />
                                     </Box>
                                     O app possui algum tipo de assinatura paga?
                                 </Typography>
                             </AccordionSummary>
-                            <AccordionDetails>
+                            <AccordionDetails
+                                sx={{
+                                    display: 'flex',
+                                    paddingLeft: '40px',
+                                    paddingRight: '100px',
+                                    paddingBottom: '30px'
+                                }}
+                            >
                                 <Typography>
                                     Não! O app Radioteraquiz é uma plataforma completamente gratuita, que tem como objetivo auxiliar os alunos de Radioterapia.
                                 </Typography>
@@ -90,17 +99,24 @@ export default function FAQ() {
 
                                 <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color: '#2D3748' }}>
                                     <Box sx={{
-                                        display:'flex',
-                                        justifyContent:'center',
-                                        alignItems:'center'
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center'
                                     }}>
-                                        <FeatherIcon icon='clock' size="24" style={{ color: '#FFA929', margin: '0px 20px' }} />
+                                        <FeatherIcon icon='rotate-cw' size="24" style={{ color: '#FFA929', margin: '0px 20px' }} />
                                     </Box>
                                     Qual a frequência de atualizações dos conteúdos?
                                 </Typography>
 
                             </AccordionSummary>
-                            <AccordionDetails>
+                            <AccordionDetails
+                                sx={{
+                                    display: 'flex',
+                                    paddingLeft: '40px',
+                                    paddingRight: '100px',
+                                    paddingBottom: '30px'
+                                }}
+                            >
                                 <Typography>
                                     O app conta com um banco de questões que estará sempre em constante evolução, mas não possui uma frequência fixa de atualizações. Prezamos pela qualidade e integridade dos conteúdos, não pelo volume.
                                 </Typography>
@@ -113,17 +129,24 @@ export default function FAQ() {
                                 id="panel3bh-header">
                                 <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color: '#2D3748' }}>
                                     <Box sx={{
-                                        display:'flex',
-                                        justifyContent:'center',
-                                        alignItems:'center'
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center'
                                     }}>
-                                        <FeatherIcon icon='smartphone' size="24" style={{ color: '#FFA929', margin: '0px 20px' }} />
+                                        <FeatherIcon icon='file-plus' size="24" style={{ color: '#FFA929', margin: '0px 20px' }} />
                                     </Box>
                                     Que tipo de conteúdos estão presentes no app?
                                 </Typography>
 
                             </AccordionSummary>
-                            <AccordionDetails>
+                            <AccordionDetails
+                                sx={{
+                                    display: 'flex',
+                                    paddingLeft: '40px',
+                                    paddingRight: '100px',
+                                    paddingBottom: '30px'
+                                }}
+                            >
                                 <Typography>
                                     O app é um assistente de estudos que possui um Quizz interativo, com perguntas e respostas justificadas sobre todo universo de Radioterapia. Questões das últimas provas de especialização, casos e muito mais.
                                 </Typography>
@@ -137,23 +160,35 @@ export default function FAQ() {
                             >
                                 <Typography sx={{ width: '33%', flexShrink: 0, fontWeight: 'bold', fontSize: '20px', display: 'flex', minHeight: "50px", justifyContent: "flex-start", alignItems: "center", color: '#2D3748' }}>
                                     <Box sx={{
-                                        display:'flex',
-                                        justifyContent:'center',
-                                        alignItems:'center'
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        alignItems: 'center'
                                     }}>
                                         <FeatherIcon icon='download' size="24" style={{ color: '#FFA929', margin: '0px 20px' }} />
                                     </Box>
                                     Onde eu consigo fazer o download do app?
                                 </Typography>
                             </AccordionSummary>
-                            <AccordionDetails>
+                            <AccordionDetails
+                                sx={{
+                                    display: 'flex',
+                                    paddingLeft: '40px',
+                                    paddingRight: '100px',
+                                    paddingBottom: '30px'
+                                }}
+                            >
                                 <Typography>
                                     O app está disponível para download nas plataformas Android e iOS. Só clicar em um dos links abaixo e você será redirecionado para a Store!
                                     <br />
                                     <br />
-                                    <a href='#' style={{ color: '#FFA929' }}>Google Play Store (Android)</a>
+                                    <a href='#' style={{ color: '#FFA929', display: 'flex', textDecoration:'none'  }}>
+                                        <AndroidIcon sx={{ marginRight: '15px' }} />
+                                        Google Play Store (Android)
+                                    </a>
                                     <br />
-                                    <a href='#' style={{ color: '#FFA929' }}>App Store (iOS) </a>
+                                    <a href='#' style={{ color: '#FFA929', display: 'flex', textDecoration:'none' }}>
+                                        <AppleIcon sx={{ marginRight: '15px' }} />
+                                        App Store (iOS) </a>
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>

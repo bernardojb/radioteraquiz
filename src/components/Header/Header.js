@@ -128,7 +128,7 @@ export default function Header(e) {
         setOpenContato(true);
         setOpenHeader(openHeader ? false : true)
     }
-    
+
     const handleCloseContato = () => setOpenContato(false);
 
     const [isContact, setIsContact] = useState(true)
@@ -198,7 +198,6 @@ export default function Header(e) {
                 )}
 
             </Grid>
-
 
             {/* MODAL DOWNLOAD */}
             <Modal
@@ -302,7 +301,6 @@ export default function Header(e) {
                 </Grid>
             </Modal>
 
-
             {/* MODAL CONTATO */}
             <Modal
                 open={openContato}
@@ -322,11 +320,11 @@ export default function Header(e) {
                         width: '100%',
                         maxWidth: '1000px',
                         height: '80vh',
-                        maxHeight:'1000px',
+                        maxHeight: '1000px',
                         display: 'flex',
                         margin: '10% 10%',
                         borderRadius: '13px',
-                        overflowY:{ xs:'scroll !important', md:'hidden !important' }
+                        overflowY: { xs: 'scroll !important', md: 'hidden !important' }
                     }}
                 >
                     <Grid item md={6} xs={12}
@@ -364,7 +362,7 @@ export default function Header(e) {
                             borderTopRightRadius: { md: '13px', xs: '0px' },
                             borderBottomRightRadius: '13px',
                             borderBottomLeftRadius: { md: '0px', xs: '13px' },
-                            overflow:'hidden'
+                            overflow: 'hidden'
                             // height: '100% !important',
                             // maxHeight: { md: 'unset !important', xs: '350px' }
                         }}>
@@ -377,14 +375,27 @@ export default function Header(e) {
 
                         }}>
                             <ThemeProvider theme={contatoTheme} >
-                                <a onClick={handleIsContact} style={{ padding: '0px 25px', cursor:'pointer' }} className={`contact__underline ${isContact ? ('active') : (null)}`}>
+                                <a onClick={handleIsContact}
+                                    className={`contact__underline ${isContact ? ('active') : (null)}`}
+                                    style={{
+                                        padding: '0px 25px',
+                                        cursor: 'pointer',
+                                        height: '50px'
+                                    }}
+                                >
                                     <Typography variant='subtitle1'>
                                         Mensagem
                                     </Typography>
                                 </a>
                             </ThemeProvider>
                             <ThemeProvider theme={contatoTheme}>
-                                <a onClick={handleIsMessage} style={{ padding: '0px 25px', cursor:'pointer' }} className={`contact__underline ${!isContact ? ('active') : (null)}`}>
+                                <a onClick={handleIsMessage}
+                                    className={`contact__underline ${!isContact ? ('active') : (null)}`}
+                                    style={{
+                                        padding: '0px 25px',
+                                        cursor: 'pointer',
+                                        height:'50px'
+                                    }} >
                                     <Typography variant='subtitle1'>
                                         Contato
                                     </Typography>
@@ -397,9 +408,9 @@ export default function Header(e) {
                                     display: 'flex',
                                     flexDirection: 'column',
                                     width: '100%',
-                                    justifyContent:'flex-start',
-                                    alignItems:'center',
-                                    height:'100%',
+                                    justifyContent: 'flex-start',
+                                    alignItems: 'center',
+                                    height: '100%',
                                 }}
                             >
                                 <Box sx={{
@@ -517,7 +528,7 @@ export default function Header(e) {
                                 }}>
                                     <a href='mailto:contato@radioteraquiz.com.br' style={{ display: 'flex', flexDirection: 'row', textDecoration: 'none', marginBottom: '25px' }}>
                                         <MailOutlineIcon sx={{ color: '#FF8635' }} />
-                                        <Typography variant='p' sx={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748', fontSize:{xs:'12px !important', sm:'unset !important'} }}>
+                                        <Typography variant='p' sx={{ margin: '0px', marginLeft: '15px', fontWeight: 'bold', color: '#2D3748', fontSize: { xs: '12px !important', sm: 'unset !important' } }}>
                                             contato@radioteraquiz.com.br
                                         </Typography>
                                     </a>

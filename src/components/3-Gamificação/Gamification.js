@@ -244,7 +244,7 @@ export default function Gamification() {
                                 borderRadius: '20px',
                                 padding: '20px',
                                 backgroundColor: 'white',
-                                minHeight: '325px'
+                                minHeight: {md:'325px', sm:'270px', xs:'auto'}
                             }}>
                                 <Box sx={{
                                     width: '64px',
@@ -289,7 +289,7 @@ export default function Gamification() {
                                 borderRadius: '20px',
                                 padding: '20px',
                                 backgroundColor: 'white',
-                                minHeight: '325px'
+                                minHeight: {md:'325px', sm:'270px', xs:'auto'}
                             }}>
                                 <Box sx={{
                                     width: '64px',
@@ -334,7 +334,7 @@ export default function Gamification() {
                                 borderRadius: '20px',
                                 padding: '20px',
                                 backgroundColor: 'white',
-                                minHeight: '325px'
+                                minHeight: {md:'325px', sm:'270px', xs:'auto'}
                             }}>
                                 <Box sx={{
                                     width: '64px',
@@ -379,7 +379,7 @@ export default function Gamification() {
                                 borderRadius: '20px',
                                 padding: '20px',
                                 backgroundColor: 'white',
-                                minHeight: '325px'
+                                minHeight: {md:'325px', sm:'270px', xs:'auto'}
                             }}>
                                 <Box sx={{
                                     width: '64px',
