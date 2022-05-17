@@ -25,7 +25,7 @@ function App() {
       <Modal />
       <Routes>
         <Route index path="/" element={<Home/>} />
-        <Route element={<Home/>} />
+        <Route path='*' element={<Home/>} />
       </Routes>
       <Footer />
     </BrowserRouter>

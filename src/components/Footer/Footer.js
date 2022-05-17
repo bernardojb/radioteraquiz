@@ -114,12 +114,12 @@ export default function Footer() {
                             <a href='https://www.instagram.com/radioterapedia/' target='_blank'>
                                 <p>Instagram</p>
                             </a>
-                            <a href="#" target='_blank' >
+                            {/* <a href="#" target='_blank' >
                             <p>Linkedin</p>
                             </a>
                             <a href="#" target='_blank' >
                             <p>Facebook</p>
-                            </a>
+                            </a> */}
                         </Box>
                     </Box>
                 </Grid>

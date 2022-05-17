@@ -103,7 +103,7 @@ export default function CF() {
                         <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                             <Typography variant='p' sx={{ color: '#FF8635', fontWeight: 'bold', marginBottom: '20px !important' }}>Como funciona</Typography>
                             <Typography variant='h4' sx={{ fontWeight: 'bold', marginBottom: '25px' }}>O app Radioteraquiz</Typography>
-                            <Typography variant='p' sx={{ marginBottom: '45px' }}>A proposta do aplicativo, é a liberdade ao usuário para criação de estudo personalizado que acontece em 3 passos:</Typography>
+                            <Typography variant='p' sx={{ marginBottom: '45px' }}>A proposta do aplicativo é dar a liberdade ao usuário para criação de estudo personalizado, que acontece em 3 passos:</Typography>
 
                             <motion.div
                                 initial='hidden'

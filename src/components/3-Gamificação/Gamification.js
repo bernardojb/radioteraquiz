@@ -153,11 +153,11 @@ export default function Gamification() {
                             }}
                         >
                             <h1 style={{ marginBottom: '0px', fontSize: '48px', marginTop: '0px' }}>3</h1>
-                            <p style={{ height: '55px', marginTop: '0px', color: '#FF8635', fontSize: '20px' }}>Temas únicos</p>
+                            <p style={{ height: '55px', marginTop: '0px', color: '#FF8635', fontSize: '20px' }}>Grandes áreas da Radioterapia</p>
                         </motion.div>
                     </Grid>
 
-                    <Grid item xs={12} sm={6} md={3}>
+                    {/* <Grid item xs={12} sm={6} md={3}>
                         <motion.div
                             initial='hidden'
                             whileInView="visible"
@@ -186,7 +186,7 @@ export default function Gamification() {
                             <h1 style={{ marginBottom: '0px', fontSize: '48px', marginTop: '0px' }}>50</h1>
                             <p style={{ height: '55px', marginTop: '0px', color: '#FF8635', fontSize: '20px' }}>Perguntas novas<br />por mês</p>
                         </motion.div>
-                    </Grid>
+                    </Grid> */}
 
                 </Grid>
 

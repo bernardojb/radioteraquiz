@@ -86,11 +86,12 @@ export default function FAQ() {
                                 }}
                             >
                                 <Typography>
-                                    Não! O app Radioteraquiz é uma plataforma completamente gratuita, que tem como objetivo auxiliar os alunos de Radioterapia.
+                                    Não! O app Radioteraquiz é uma plataforma completamente gratuita, que tem como objetivo auxiliar os profissionais da Radioterapia, em formação ou atualização.
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
-                        <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} className='faq__accordion'>
+
+                        {/* <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} className='faq__accordion'>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
                                 aria-controls="panel2bh-content"
@@ -121,7 +122,8 @@ export default function FAQ() {
                                     O app conta com um banco de questões que estará sempre em constante evolução, mas não possui uma frequência fixa de atualizações. Prezamos pela qualidade e integridade dos conteúdos, não pelo volume.
                                 </Typography>
                             </AccordionDetails>
-                        </Accordion>
+                        </Accordion> */}
+
                         <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} className='faq__accordion'>
                             <AccordionSummary
                                 expandIcon={<ExpandMoreIcon />}
@@ -148,7 +150,7 @@ export default function FAQ() {
                                 }}
                             >
                                 <Typography>
-                                    O app é um assistente de estudos que possui um Quizz interativo, com perguntas e respostas justificadas sobre todo universo de Radioterapia. Questões das últimas provas de especialização, casos e muito mais.
+                                    O app é um assistente de estudos que possui um quiz interativo, com perguntas e respostas justificadas sobre todo universo de Radioterapia. Questões das últimas provas de especialização, casos e muito mais.
                                 </Typography>
                             </AccordionDetails>
                         </Accordion>
