@@ -70,22 +70,30 @@ export default function Header(e) {
 
     //Header sticky
     const [isSticky, setIsSticky] = useState()
-    window.addEventListener('scroll', function () {
-        var value = window.scrollY;
-        var innerWidth = window.innerWidth
 
+    useEffect(() => {
         if (window.location.pathname === "/politica-de-privacidade" || window.location.pathname === "/termos-de-uso") {
             document.querySelector('.header').classList.add('sticky')
             setIsSticky(true)
-        } else
-            if (value > 120 || innerWidth < 900) {
-                document.querySelector('.header').classList.add('sticky')
-                setIsSticky(true)
-            } else {
-                document.querySelector('.header').classList.remove('sticky')
-                setIsSticky(false)
-            }
-    });
+        } else {
+            window.addEventListener('scroll', function () {
+                var value = window.scrollY;
+                var innerWidth = window.innerWidth
+
+                if (window.location.pathname === "/politica-de-privacidade" || window.location.pathname === "/termos-de-uso") {
+                    document.querySelector('.header').classList.add('sticky')
+                    setIsSticky(true)
+                } else if (value > 120 || innerWidth < 900) {
+                    document.querySelector('.header').classList.add('sticky')
+                    setIsSticky(true)
+                } else {
+                    document.querySelector('.header').classList.remove('sticky')
+                    setIsSticky(false)
+                }
+            });
+        }
+    })
+
 
     //Toast
     const [emailSuccess, setEmailSuccess] = useState(false)
@@ -117,15 +125,16 @@ export default function Header(e) {
 
     const { mobileView } = state;
 
-    useEffect(() => {
-        if (window.location.pathname === "/politica-de-privacidade" || window.location.pathname === "/termos-de-uso") {
-            setIsSticky(true)
-            document.querySelector('.header').classList.add('sticky')
-        } else {
-            document.querySelector('.header').classList.remove('sticky')
-            setIsSticky(false)
-        }
-    })
+    // useEffect(() => {
+    //     if (window.location.pathname === "/politica-de-privacidade" || window.location.pathname === "/termos-de-uso") {
+    //         setIsSticky(true)
+    //         document.querySelector('.header').classList.add('sticky')
+    //         console.log('teste')
+    //     } else {
+    //         document.querySelector('.header').classList.remove('sticky')
+    //         setIsSticky(false)
+    //     }
+    // })
 
     useEffect(() => {
         const setResponsiveness = () => {
@@ -185,7 +194,7 @@ export default function Header(e) {
                     <Grid className='header__logo' item >
                         {isSticky ?
                             (
-                                <a href='https://radioteraquiz.com.br/' style={{
+                                <a href='/' style={{
                                     display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center'
@@ -194,7 +203,7 @@ export default function Header(e) {
                                 </a>
                             ) :
                             (
-                                <a href='https://radioteraquiz.com.br/' style={{
+                                <a href='/' style={{
                                     display: 'flex',
                                     justifyContent: 'center',
                                     alignItems: 'center'
