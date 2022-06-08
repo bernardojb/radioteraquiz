@@ -77,14 +77,14 @@ export default function Header(e) {
         if (window.location.pathname === "/politica-de-privacidade" || window.location.pathname === "/termos-de-uso") {
             document.querySelector('.header').classList.add('sticky')
             setIsSticky(true)
-        } else 
-        if (value > 120 || innerWidth < 900) {
-            document.querySelector('.header').classList.add('sticky')
-            setIsSticky(true)
-        } else {
-            document.querySelector('.header').classList.remove('sticky')
-            setIsSticky(false)
-        }
+        } else
+            if (value > 120 || innerWidth < 900) {
+                document.querySelector('.header').classList.add('sticky')
+                setIsSticky(true)
+            } else {
+                document.querySelector('.header').classList.remove('sticky')
+                setIsSticky(false)
+            }
     });
 
     //Toast
@@ -118,10 +118,20 @@ export default function Header(e) {
     const { mobileView } = state;
 
     useEffect(() => {
+        if (window.location.pathname === "/politica-de-privacidade" || window.location.pathname === "/termos-de-uso") {
+            setIsSticky(true)
+            document.querySelector('.header').classList.add('sticky')
+        } else {
+            document.querySelector('.header').classList.remove('sticky')
+            setIsSticky(false)
+        }
+    })
+
+    useEffect(() => {
         const setResponsiveness = () => {
-            return window.innerWidth < 900 
-            // || window.location.pathname === "/politica-de-privacidade" 
-            // || window.location.pathname === "/termos-de-uso"
+            return window.innerWidth < 900
+                // || window.location.pathname === "/politica-de-privacidade" 
+                // || window.location.pathname === "/termos-de-uso"
                 ? setState((prevState) => ({ ...prevState, mobileView: true }),
                     document.querySelector('.header').classList.add('sticky'),
                     setIsSticky(true))
@@ -477,7 +487,7 @@ export default function Header(e) {
 
                                         }}>
                                             <Typography variant='h4' sx={{ marginBottom: '25px', fontWeight: 'bold' }}>Fale Conosco</Typography>
-                                            <p style={{ maxWidth: '270px', marginTop: '0px', margin: '0px 10px', color:'#718096' }}>Está precisando de ajuda? Responderemos o seu contato o mais breve possível!</p>
+                                            <p style={{ maxWidth: '270px', marginTop: '0px', margin: '0px 10px', color: '#718096' }}>Está precisando de ajuda? Responderemos o seu contato o mais breve possível!</p>
                                         </Box>
                                         <Box
                                             ref={form}
@@ -575,7 +585,7 @@ export default function Header(e) {
                                             <Typography variant='h4' sx={{ marginBottom: "25px", fontWeight: 'bold' }}>
                                                 Informações de contato
                                             </Typography>
-                                            <p style={{ marginTop: '0px', margin: '0px 10px', color:'#718096' }}>
+                                            <p style={{ marginTop: '0px', margin: '0px 10px', color: '#718096' }}>
                                                 Você pode entrar em contato conosco através dos endereços abaixo!
                                             </p>
                                         </Box>

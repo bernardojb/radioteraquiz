@@ -17,6 +17,7 @@ import {
     Alert,
     CircularProgress
 } from '@mui/material'
+import { textAlign } from '@mui/system'
 
 export default function Sobre(props) {
     return (
@@ -29,7 +30,8 @@ export default function Sobre(props) {
                 </Typography>
                 <Typography variant='h6'
                 sx={{
-                    color:'#718096'
+                    color:'#718096',
+                    textAlign:'justify'
                 }}
                 >
                     {props.text}

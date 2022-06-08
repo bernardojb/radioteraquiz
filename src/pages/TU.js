@@ -259,7 +259,7 @@ export default function TU() {
         }
       />
       <Sobre
-        number='XIV;'
+        number='XIV.'
         title='MUDANÇAS NOS TERMOS DE SERVIÇO'
         text='A Radioteraquiz se reserva no direito, quando necessário, com ou sem aviso prévio, de alterar estes Termos de Uso a nosso critério exclusivo e absoluto. A versão mais recente destes Termos de Uso pode ser revista, clicando em "Termos de Uso", localizado no rodapé do site. A versão mais atual dos Termos substituirá todas as versões anteriores. O uso do site ou do uso continuado dos serviços após as alterações significa que o usuário concorda em ficar vinculado por tais alterações.'
       />
