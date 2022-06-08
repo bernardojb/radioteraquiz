@@ -77,7 +77,8 @@ export default function Header(e) {
         if (window.location.pathname === "/politica-de-privacidade" || window.location.pathname === "/termos-de-uso") {
             document.querySelector('.header').classList.add('sticky')
             setIsSticky(true)
-        } else if (value > 120 || innerWidth < 900) {
+        } else 
+        if (value > 120 || innerWidth < 900) {
             document.querySelector('.header').classList.add('sticky')
             setIsSticky(true)
         } else {
@@ -118,7 +119,9 @@ export default function Header(e) {
 
     useEffect(() => {
         const setResponsiveness = () => {
-            return window.innerWidth < 900 || window.location.pathname === "/politica-de-privacidade" || window.location.pathname === "/termos-de-uso"
+            return window.innerWidth < 900 
+            // || window.location.pathname === "/politica-de-privacidade" 
+            // || window.location.pathname === "/termos-de-uso"
                 ? setState((prevState) => ({ ...prevState, mobileView: true }),
                     document.querySelector('.header').classList.add('sticky'),
                     setIsSticky(true))
@@ -202,8 +205,8 @@ export default function Header(e) {
                                 <Grid className='header--mobile'>
                                     <HashLink to="/#sobre-o-app" onClick={handleHeaderOpen}>Sobre o app</HashLink>
                                     <HashLink to="/#faq" onClick={handleHeaderOpen}>FAQ</HashLink>
-                                    <Link to="" onClick={handleOpenContato}>Contato</Link>
-                                    <Link to="" onClick={handleOpenDownload}>Download</Link>
+                                    <Link to="#" onClick={handleOpenContato}>Contato</Link>
+                                    <Link to="#" onClick={handleOpenDownload}>Download</Link>
                                 </Grid>) :
                                 (null)}
 
@@ -213,7 +216,7 @@ export default function Header(e) {
                             <Grid className='header__navLinks' item >
                                 <HashLink className='header__navlink' to='/#sobre-o-app'>Sobre o app</HashLink>
                                 <HashLink className='header__navlink' to='/#faq'>FAQ</HashLink>
-                                <Link className='header__navlink' to="" onClick={handleOpenContato}>Contato</Link>
+                                <Link className='header__navlink' to='#' onClick={handleOpenContato}>Contato</Link>
                             </Grid>
                             <Grid className='header__downloadBtn'>
                                 <Button onClick={handleOpenDownload} className='btn-styled' style={{ fontSize: '14px', fontWeight: 'bold' }}>
