@@ -48,16 +48,6 @@ export default function PP() {
           color: '#FF8635',
           marginBottom: '50px',
         }}>Política de Privacidade</Typography>
-        <Typography variant='h6'
-          sx={{
-            color: '#718096',
-          }}>
-          O App é de propriedade da RADIOTERAQUIZ LTDA, CNPJ 42.385.311/0001-66, sociedade empresária com sede em São Paulo, SP, na rua Artur Prado, 621, Bela Vista, CEP 01322000 (“Radioteraquiz”). Você poderá entrar em contato conosco pelos meios digitais disponibilizados no App.
-          <br />
-          <br />
-          <br />
-          O acesso ao App da Radioteraquiz (“App”) está sujeito à aceitação do presente instrumento (“Termos de Uso”) que o vincula legalmente. Ao acessar, navegar, compartilhar, contribuir ou usar o App, você reconhece que leu, entendeu e concordou com as disposições a seguir estabelecidas.
-        </Typography>
       </Box>
 
       <Sobre
