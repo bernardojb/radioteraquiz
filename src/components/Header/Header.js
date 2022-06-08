@@ -41,6 +41,7 @@ import emailjs from 'emailjs-com'
 import MenuIcon from '@mui/icons-material/Menu';
 import { height } from '@mui/system';
 import { ToastContainer, toast } from 'react-toastify';
+import { HashLink } from 'react-router-hash-link';
 
 const Backdrop = styled('div')`
   z-index: -1;
@@ -199,8 +200,8 @@ export default function Header(e) {
                             </Grid>
                             {openHeader ? (
                                 <Grid className='header--mobile'>
-                                    <a href="#sobre-o-app" onClick={handleHeaderOpen}>Sobre o app</a>
-                                    <a href="#faq" onClick={handleHeaderOpen}>FAQ</a>
+                                    <HashLink to="/#sobre-o-app" onClick={handleHeaderOpen}>Sobre o app</HashLink>
+                                    <HashLink to="/#faq" onClick={handleHeaderOpen}>FAQ</HashLink>
                                     <Link to="" onClick={handleOpenContato}>Contato</Link>
                                     <Link to="" onClick={handleOpenDownload}>Download</Link>
                                 </Grid>) :
@@ -210,8 +211,8 @@ export default function Header(e) {
                     ) : (
                         <>
                             <Grid className='header__navLinks' item >
-                                <a className='header__navlink' href='#sobre-o-app'>Sobre o app</a>
-                                <a className='header__navlink' href='#faq'>FAQ</a>
+                                <HashLink className='header__navlink' to='/#sobre-o-app'>Sobre o app</HashLink>
+                                <HashLink className='header__navlink' to='/#faq'>FAQ</HashLink>
                                 <Link className='header__navlink' to="" onClick={handleOpenContato}>Contato</Link>
                             </Grid>
                             <Grid className='header__downloadBtn'>

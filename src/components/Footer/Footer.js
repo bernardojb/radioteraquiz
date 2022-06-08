@@ -1,6 +1,7 @@
 import React from 'react'
 import { Grid, Container, Button, Box } from '@mui/material'
 import { Link } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link';
 
 //Images
 import radioteraquizLogo from '../../assets/logo-default.svg'
@@ -38,17 +39,17 @@ export default function Footer() {
                         }}
                     >
                         <a href='https://radioteraquiz.com.br/'>
-                        <img src={radioteraquizLogo} style={{ width: '100%', maxWidth: '200px' }} />
+                            <img src={radioteraquizLogo} style={{ width: '100%', maxWidth: '200px' }} />
                         </a>
                         <p>© {year} - Radioteraquiz LTDA</p>
                         <span style={{ display: 'flex', flexDirection: 'row', width: '100%' }}>
                             <p style={{ fontWeight: 'bold', marginRight: '15px' }}>Powered by</p>
                             <a href='https://hokup.com.br/' target='_blank' style={{
-                                display:'flex',
-                                justifyContent:'center',
-                                alignItems:'center'
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center'
                             }}>
-                            <img style={{ width: '100%', maxWidth: "90px" }} src={hokupLogo} />
+                                <img style={{ width: '100%', maxWidth: "90px" }} src={hokupLogo} />
                             </a>
                         </span>
                     </Box>
@@ -67,15 +68,12 @@ export default function Footer() {
                     }}>
                         <p style={{ fontWeight: 'bold', marginTop: '0px' }}>Informações</p>
                         <Box>
-                            <a href="#sobre-o-app">
+                            <HashLink to="/#sobre-o-app">
                                 <p>Sobre o app</p>
-                            </a>
-                            {/* <a href='#planos'>
-                                <p>Planos</p>
-                            </a> */}
-                            <a href='#faq'>
+                            </HashLink>
+                            <HashLink to="/#faq">
                                 <p>FAQ</p>
-                            </a>
+                            </HashLink>
                         </Box>
                     </Box>
                 </Grid>
