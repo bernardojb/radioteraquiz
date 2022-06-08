@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid, Container, Button, Box } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 //Images
 import radioteraquizLogo from '../../assets/logo-default.svg'
@@ -109,11 +110,14 @@ export default function Footer() {
                         maxWidth: '250px',
                         width: '100%'
                     }}>
-                        <p style={{ fontWeight: 'bold', marginTop: '0px' }}>Social Media</p>
+                        <p style={{ fontWeight: 'bold', marginTop: '0px' }}>Ajuda</p>
                         <Box>
-                            <a href='https://www.instagram.com/radioterapedia/' target='_blank'>
-                                <p>Instagram</p>
-                            </a>
+                            <Link to='/termos-de-uso'>
+                                <p>Termos de Uso</p>
+                            </Link>
+                            <Link to='/politica-de-privacidade'>
+                                <p>Política de privacidade</p>
+                            </Link>
                             {/* <a href="#" target='_blank' >
                             <p>Linkedin</p>
                             </a>

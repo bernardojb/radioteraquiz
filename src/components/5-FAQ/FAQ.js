@@ -55,7 +55,7 @@ export default function FAQ() {
                             {/* <p>{`TESTE ${modalOpen}`}</p> */}
                             <Typography variant='p' sx={{ fontWeight: 'bold', color: "#FF8635", marginBottom: '20px' }}>Ajuda</Typography>
                             <Typography variant='h3' sx={{ fontWeight: 'bold', marginBottom: '40px' }}>Perguntas frequentes</Typography>
-                            <Typography variant='p' sx={{ marginBottom: '40px' }}>
+                            <Typography variant='p' sx={{ marginBottom: '40px', color:'#718096' }}>
                                 Caso precise de suporte adicional, entre em contato pelo email <a href='mailto:contato@radioteraquiz.com.br' style={{ fontWeight: 'bold', color: "#FF8635", textDecoration: 'underline', cursor: 'pointer' }}> contato@radioteraquiz.com.br</a></Typography>
                         </Box>
                     </Grid>
@@ -85,7 +85,7 @@ export default function FAQ() {
                                     paddingBottom: '30px'
                                 }}
                             >
-                                <Typography>
+                                <Typography sx={{color:'#718096'}}>
                                     Não! O app Radioteraquiz é uma plataforma completamente gratuita, que tem como objetivo auxiliar os profissionais da Radioterapia, em formação ou atualização.
                                 </Typography>
                             </AccordionDetails>
@@ -149,7 +149,7 @@ export default function FAQ() {
                                     paddingBottom: '30px'
                                 }}
                             >
-                                <Typography>
+                                <Typography sx={{color:'#718096'}}>
                                     O app é um assistente de estudos que possui um quiz interativo, com perguntas e respostas justificadas sobre todo universo de Radioterapia. Questões das últimas provas de especialização, casos e muito mais.
                                 </Typography>
                             </AccordionDetails>
@@ -179,7 +179,7 @@ export default function FAQ() {
                                     paddingBottom: '30px'
                                 }}
                             >
-                                <Typography>
+                                <Typography sx={{color:'#718096'}}>
                                     O app está disponível para download nas plataformas Android e iOS. Só clicar em um dos links abaixo e você será redirecionado para a Store!
                                     <br />
                                     <br />

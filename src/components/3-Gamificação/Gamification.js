@@ -205,7 +205,7 @@ export default function Gamification() {
                         flexDirection: 'column'
                     }}>
                         <Typography variant='h3' sx={{ fontWeight: 'bold', marginBottom: '45px' }}>Gamificação que te ajuda a<br /><span style={{ color: '#FF8635' }}>evoluir constantemente.</span></Typography>
-                        <Typography variant='p' sx={{ maxWidth: '700px !important' }}>Através de um sistema dinâmico e de fácil usabilidade, o app auxilia a sua jornada de estudos exibindo uma série informações sobre seu progresso!  </Typography>
+                        <Typography variant='p' sx={{ maxWidth: '700px !important', color:'#718096' }}>Através de um sistema dinâmico e de fácil usabilidade, o app auxilia a sua jornada de estudos exibindo uma série informações sobre seu progresso!  </Typography>
                     </Grid>
                 </Grid>
 
@@ -258,7 +258,7 @@ export default function Gamification() {
                                     <FeatherIcon icon='check-circle' style={{ color: '#FFA929' }} />
                                 </Box>
                                 <p style={{ marginBottom: '15px', fontWeight: 'bold', fontSize: '20px' }}>Percentual de acerto</p>
-                                <p style={{ marginTop: '0px',  }}>O app Radioteraquiz traça médias de acordo com sua usabilidade, informando ao usuário seu desempenho.</p>
+                                <p style={{ marginTop: '0px', color:'#718096'  }}>O app Radioteraquiz traça médias de acordo com sua usabilidade, informando ao usuário seu desempenho.</p>
                             </Box>
                         </motion.div>
                     </Grid>
@@ -303,7 +303,7 @@ export default function Gamification() {
                                     <FeatherIcon icon='bar-chart' style={{ color: '#FFA929' }} />
                                 </Box>
                                 <p style={{ marginBottom: '15px', fontWeight: 'bold', fontSize: '20px' }}>Acertos em sequência</p>
-                                <p style={{ marginTop: '0px',  }}>Uma forma descontraída que incentiva o aluno a superar seus prórios limites, acelerando o processo de aprendizagem.</p>
+                                <p style={{ marginTop: '0px', color:'#718096'  }}>Uma forma descontraída que incentiva o aluno a superar seus prórios limites, acelerando o processo de aprendizagem.</p>
                             </Box>
                         </motion.div>
                     </Grid>
@@ -348,7 +348,7 @@ export default function Gamification() {
                                     <FeatherIcon icon='book-open' style={{ color: '#FFA929' }} />
                                 </Box>
                                 <p style={{ marginBottom: '15px', fontWeight: 'bold', fontSize: '20px' }}>Perguntas respondidas</p>
-                                <p style={{ marginTop: '0px',  }}>O app também informa o número total de perguntas respondidas, auxiliando o usuário a bater suas metas de estudo.</p>
+                                <p style={{ marginTop: '0px', color:'#718096'  }}>O app também informa o número total de perguntas respondidas, auxiliando o usuário a bater suas metas de estudo.</p>
                             </Box>
                         </motion.div>
                     </Grid>
@@ -393,7 +393,7 @@ export default function Gamification() {
                                     <FeatherIcon icon='activity' style={{ color: '#FFA929' }} />
                                 </Box>
                                 <p style={{ marginBottom: '15px', fontWeight: 'bold', fontSize: '20px' }}>Tempo médio<br />de estudo</p>
-                                <p style={{ marginTop: '0px',  }}>Saiba a média do tempo investido em seus estudos, mas também não se esqueça de fazer uma pausa para tomar um cafézinho.</p>
+                                <p style={{ marginTop: '0px', color:'#718096' }}>Saiba a média do tempo investido em seus estudos, mas também não se esqueça de fazer uma pausa para tomar um cafézinho.</p>
                             </Box>
                         </motion.div>
                     </Grid>

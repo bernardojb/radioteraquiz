@@ -103,7 +103,7 @@ export default function CF() {
                         <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
                             <Typography variant='p' sx={{ color: '#FF8635', fontWeight: 'bold', marginBottom: '20px !important' }}>Como funciona</Typography>
                             <Typography variant='h4' sx={{ fontWeight: 'bold', marginBottom: '25px' }}>O app Radioteraquiz</Typography>
-                            <Typography variant='p' sx={{ marginBottom: '45px' }}>A proposta do aplicativo é dar a liberdade ao usuário para criação de estudo personalizado, que acontece em 3 passos:</Typography>
+                            <Typography variant='p' sx={{ marginBottom: '45px', color:'#718096' }}>A proposta do aplicativo é dar a liberdade ao usuário para criação de estudo personalizado, que acontece em 3 passos:</Typography>
 
                             <motion.div
                                 initial='hidden'
@@ -174,7 +174,7 @@ export default function CF() {
                                         maxWidth: '400px'
                                     }}>
                                         <p style={{ fontSize: '20px', fontWeight: 'bold', margin: '0px' }}>Temas e perguntas</p>
-                                        <p style={{ marginTop: '10px', marginBottom: '25px' }}>Selecione quais temas você quer estudar e quantas perguntas você quer adicionar no seu quiz.</p>
+                                        <p style={{ marginTop: '10px', marginBottom: '25px', color:'#718096' }}>Selecione quais temas você quer estudar e quantas perguntas você quer adicionar no seu quiz.</p>
                                     </Box>
                                 </Box>
                             </motion.div>
@@ -249,7 +249,7 @@ export default function CF() {
                                         maxWidth: '400px'
                                     }}>
                                         <p style={{ fontSize: '20px', fontWeight: 'bold', margin: '0px' }}>Dificuldade</p>
-                                        <p style={{ marginTop: '10px', marginBottom: '25px' }}>Escolha qual a dificuldade das perguntas que você quer estudar: Fácil, médio ou difícil.</p>
+                                        <p style={{ marginTop: '10px', marginBottom: '25px', color:'#718096' }}>Escolha qual a dificuldade das perguntas que você quer estudar: Fácil, médio ou difícil.</p>
                                     </Box>
                                 </Box>
                             </motion.div>
@@ -310,7 +310,7 @@ export default function CF() {
                                         maxWidth: '400px'
                                     }}>
                                         <p style={{ fontSize: '20px', fontWeight: 'bold', margin: '0px' }}>Pronto!</p>
-                                        <p style={{ marginTop: '10px', marginBottom: '25px' }}>Agora é só iniciar o quiz e estudar!</p>
+                                        <p style={{ marginTop: '10px', marginBottom: '25px', color:'#718096' }}>Agora é só iniciar o quiz e estudar!</p>
                                     </Box>
                                 </Box>
                             </motion.div>

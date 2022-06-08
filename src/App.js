@@ -13,6 +13,8 @@ import './App.scss';
 //Routes
 import Header from './components/Header/Header'
 import Home from './pages/Home'
+import TermosDeUso from './pages/TU'
+import PoliticaDePrivacidade from './pages/PP'
 import Footer from './components/Footer/Footer'
 
 //Modal
@@ -25,6 +27,8 @@ function App() {
       <Modal />
       <Routes>
         <Route index path="/" element={<Home/>} />
+        <Route index path="/termos-de-uso" element={<TermosDeUso/>} />
+        <Route index path="/politica-de-privacidade" element={<PoliticaDePrivacidade/>} />
         <Route path='*' element={<Home/>} />
       </Routes>
       <Footer />

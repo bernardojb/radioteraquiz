@@ -72,7 +72,11 @@ export default function Header(e) {
     window.addEventListener('scroll', function () {
         var value = window.scrollY;
         var innerWidth = window.innerWidth
-        if (value > 120 || innerWidth < 900) {
+
+        if (window.location.pathname === "/politica-de-privacidade" || window.location.pathname === "/termos-de-uso") {
+            document.querySelector('.header').classList.add('sticky')
+            setIsSticky(true)
+        } else if (value > 120 || innerWidth < 900) {
             document.querySelector('.header').classList.add('sticky')
             setIsSticky(true)
         } else {
@@ -100,7 +104,7 @@ export default function Header(e) {
                 setDisabledButton(false)
             });
 
-            setDisabledButton(true)
+        setDisabledButton(true)
     };
 
 
@@ -113,7 +117,7 @@ export default function Header(e) {
 
     useEffect(() => {
         const setResponsiveness = () => {
-            return window.innerWidth < 900
+            return window.innerWidth < 900 || window.location.pathname === "/politica-de-privacidade" || window.location.pathname === "/termos-de-uso"
                 ? setState((prevState) => ({ ...prevState, mobileView: true }),
                     document.querySelector('.header').classList.add('sticky'),
                     setIsSticky(true))
@@ -121,12 +125,15 @@ export default function Header(e) {
                     document.querySelector('.header').classList.remove('sticky'),
                     setIsSticky(false));
         };
+
         setResponsiveness();
+
         window.addEventListener("resize", () => setResponsiveness());
 
         return () => {
             window.removeEventListener("resize", () => setResponsiveness());
         }
+
     }, []);
 
     //Modal
@@ -466,7 +473,7 @@ export default function Header(e) {
 
                                         }}>
                                             <Typography variant='h4' sx={{ marginBottom: '25px', fontWeight: 'bold' }}>Fale Conosco</Typography>
-                                            <p style={{ maxWidth: '270px', marginTop: '0px', margin: '0px 10px' }}>Está precisando de ajuda? Responderemos o seu contato o mais breve possível!</p>
+                                            <p style={{ maxWidth: '270px', marginTop: '0px', margin: '0px 10px', color:'#718096' }}>Está precisando de ajuda? Responderemos o seu contato o mais breve possível!</p>
                                         </Box>
                                         <Box
                                             ref={form}
@@ -539,10 +546,10 @@ export default function Header(e) {
                                                 style={{ width: '80%', marginBottom: '20px' }}
                                             />
                                             <Button disabled={disabledButton} type='submit' className='btn-styled' style={{ width: '100%', maxWidth: '200px', fontWeight: 'bold' }}>
-                                             
-                                            {disabledButton ? (
-                                                <CircularProgress sx={{color:'white'}} size={25} /> 
-                                            ) : ('Enviar')}
+
+                                                {disabledButton ? (
+                                                    <CircularProgress sx={{ color: 'white' }} size={25} />
+                                                ) : ('Enviar')}
                                             </Button>
                                         </Box>
                                     </Box>
@@ -564,7 +571,7 @@ export default function Header(e) {
                                             <Typography variant='h4' sx={{ marginBottom: "25px", fontWeight: 'bold' }}>
                                                 Informações de contato
                                             </Typography>
-                                            <p style={{ marginTop: '0px', margin: '0px 10px' }}>
+                                            <p style={{ marginTop: '0px', margin: '0px 10px', color:'#718096' }}>
                                                 Você pode entrar em contato conosco através dos endereços abaixo!
                                             </p>
                                         </Box>
