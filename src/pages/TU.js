@@ -51,6 +51,7 @@ export default function TU() {
         <Typography variant='h6'
           sx={{
             color: '#718096',
+            textAlign:'justify'
           }}>
           O App é de propriedade da RADIOTERAQUIZ LTDA, CNPJ 42.385.311/0001-66, sociedade empresária com sede em São Paulo, SP, na rua Artur Prado, 621, Bela Vista, CEP 01322000 (“Radioteraquiz”). Você poderá entrar em contato conosco pelos meios digitais disponibilizados no App.
           <br />

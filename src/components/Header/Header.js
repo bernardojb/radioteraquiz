@@ -125,17 +125,6 @@ export default function Header(e) {
 
     const { mobileView } = state;
 
-    // useEffect(() => {
-    //     if (window.location.pathname === "/politica-de-privacidade" || window.location.pathname === "/termos-de-uso") {
-    //         setIsSticky(true)
-    //         document.querySelector('.header').classList.add('sticky')
-    //         console.log('teste')
-    //     } else {
-    //         document.querySelector('.header').classList.remove('sticky')
-    //         setIsSticky(false)
-    //     }
-    // })
-
     useEffect(() => {
         const setResponsiveness = () => {
             return window.innerWidth < 900
