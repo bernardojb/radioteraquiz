@@ -331,8 +331,12 @@ export default function Header(e) {
                                 maxWidth: '270px',
                                 marginTop: { md: "50px", xs: '15px' }
                             }}>
-                                <img style={{ width: '100%', maxWidth: '125px', marginBottom: '20px' }} src={googleIcon} />
-                                <img style={{ width: '100%', maxWidth: '125px', marginBottom: '20px' }} src={iosIcon} />
+                                <a href='https://play.google.com/store/apps/details?id=com.hokup.radioteraquiz' target='_blank'>
+                                    <img style={{ width: '100%', maxWidth: '125px', marginBottom: '20px' }} src={googleIcon} />
+                                </a>
+                                <a href='https://apps.apple.com/us/app/radioteraquiz/id1603222290' target='_blank'>
+                                    <img style={{ width: '100%', maxWidth: '125px', marginBottom: '20px' }} src={iosIcon} />
+                                </a>
                             </Box>
                         </Grid>
                     </Grid>

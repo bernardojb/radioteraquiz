@@ -99,12 +99,12 @@ export default function Intro() {
                             }}
                         >
                             <Box sx={{ width: '100%' }}>
-                                <Link to='/' >
+                                <a href='https://play.google.com/store/apps/details?id=com.hokup.radioteraquiz' target='_blank' >
                                     <img style={{ width: '100%', maxWidth: '150px', marginRight: '35px' }} src={googleIcon} />
-                                </Link>
-                                <Link to='/'>
+                                </a>
+                                <a href='https://apps.apple.com/us/app/radioteraquiz/id1603222290' target='_blank' >
                                     <img style={{ width: '100%', maxWidth: '150px' }} src={iosIcon} />
-                                </Link>
+                                </a>
                             </Box>
                         </motion.div>
                     </Grid>

@@ -91,8 +91,13 @@ export default function Footer() {
                     }}>
                         <p style={{ fontWeight: 'bold', marginTop: '0px' }}>Download</p>
                         <Box>
-                            <p>Android</p>
-                            <p>iOS</p>
+                            <a href='https://play.google.com/store/apps/details?id=com.hokup.radioteraquiz' target='_blank'>
+                                <p>Android</p>
+                            </a>
+                            <a href='https://apps.apple.com/us/app/radioteraquiz/id1603222290' target='_blank'>
+                                <p>iOS</p>
+                            </a>
+
                         </Box>
                     </Box>
                 </Grid>
