@@ -205,7 +205,7 @@ export default function Gamification() {
                         flexDirection: 'column'
                     }}>
                         <Typography variant='h3' sx={{ fontWeight: 'bold', marginBottom: '45px' }}>Gamificação que te ajuda a<br /><span style={{ color: '#FF8635' }}>evoluir constantemente.</span></Typography>
-                        <Typography variant='p' sx={{ maxWidth: '700px !important', color:'#718096' }}>Através de um sistema dinâmico e de fácil usabilidade, o app auxilia a sua jornada de estudos exibindo uma série informações sobre seu progresso!  </Typography>
+                        <Typography variant='p' sx={{ maxWidth: '700px !important', color:'#718096' }}>Através de um sistema dinâmico e de fácil usabilidade, o app auxilia a sua jornada de estudos exibindo uma série de informações sobre seu progresso!  </Typography>
                     </Grid>
                 </Grid>
 
