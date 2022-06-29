@@ -77,8 +77,8 @@ export default function Intro() {
                             >
                                 {/* <IntroText> */}
                                 <Typography variant='p' sx={{ fontSize: "24px", fontWeight: "bold", marginBottom: '25px !important' }}>Radioteraquiz</Typography>
-                                <Typography variant='h3' sx={{ color: 'white', fontWeight: 'bold', marginBottom: '40px' }}>Um app de estudo personalizado para Radioterapeutas.</Typography>
-                                <Typography variant='p' sx={{ fontSize: '20px', marginBottom: "25px", color: "white" }}>Oferece em sua mão uma metodologia Gamificada, que traz a união de conhecimento, tecnologia e propósito com questões das principais áreas da Radioterapia.</Typography>
+                                <Typography variant='h3' sx={{ color: 'white', fontWeight: 'bold', marginBottom: '40px' }}>Um app de estudo personalizado para profissionais de Radioterapia.</Typography>
+                                <Typography variant='p' sx={{ fontSize: '20px', marginBottom: "25px", color: "white" }}>Metodologia ativa gamificada em suas mãos para acelerar seu aprendizado, com questões das principais áreas da Radioterapia.</Typography>
                                 {/* </IntroText> */}
                             </Box>
                         </motion.div>

@@ -249,7 +249,7 @@ export default function CF() {
                                         maxWidth: '400px'
                                     }}>
                                         <p style={{ fontSize: '20px', fontWeight: 'bold', margin: '0px' }}>Dificuldade</p>
-                                        <p style={{ marginTop: '10px', marginBottom: '25px', color:'#718096' }}>Escolha qual a dificuldade das perguntas que você quer estudar: Fácil, médio ou difícil.</p>
+                                        <p style={{ marginTop: '10px', marginBottom: '25px', color:'#718096' }}>Escolha qual a dificuldade das perguntas que você quer estudar: fácil, médio ou difícil.</p>
                                     </Box>
                                 </Box>
                             </motion.div>

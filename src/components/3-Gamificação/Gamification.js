@@ -205,7 +205,7 @@ export default function Gamification() {
                         flexDirection: 'column'
                     }}>
                         <Typography variant='h3' sx={{ fontWeight: 'bold', marginBottom: '45px' }}>Gamificação que te ajuda a<br /><span style={{ color: '#FF8635' }}>evoluir constantemente.</span></Typography>
-                        <Typography variant='p' sx={{ maxWidth: '700px !important', color:'#718096' }}>Através de um sistema dinâmico e de fácil usabilidade, o app auxilia a sua jornada de estudos exibindo uma série de informações sobre seu progresso!  </Typography>
+                        <Typography variant='p' sx={{ maxWidth: '700px !important', color:'#718096' }}>Através de um sistema dinâmico e de fácil usabilidade, o app te auxilia na sua jornada de estudos exibindo uma série de informações sobre seu progresso!  </Typography>
                     </Grid>
                 </Grid>
 
@@ -393,7 +393,7 @@ export default function Gamification() {
                                     <FeatherIcon icon='activity' style={{ color: '#FFA929' }} />
                                 </Box>
                                 <p style={{ marginBottom: '15px', fontWeight: 'bold', fontSize: '20px' }}>Tempo médio<br />de estudo</p>
-                                <p style={{ marginTop: '0px', color:'#718096' }}>Saiba a média do tempo investido em seus estudos, mas também não se esqueça de fazer uma pausa para tomar um cafézinho.</p>
+                                <p style={{ marginTop: '0px', color:'#718096' }}>Saiba a média do tempo investido em seus estudos, mas também não se esqueça de fazer uma pausa para tomar um cafezinho.</p>
                             </Box>
                         </motion.div>
                     </Grid>

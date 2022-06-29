@@ -23,16 +23,23 @@ export default function Sobre(props) {
     return (
         <>
             <Box sx={{
-                marginBottom:'50px'
+                marginBottom: '50px'
             }}>
-                <Typography variant='h5' sx={{ fontWeight: 'bold', textTransform: 'uppercase', marginBottom:'35px' }}>
-                    <span style={{ color: '#FF8635', marginRight: '75px' }}>{props.number}</span>{props.title}
-                </Typography>
+                {props.number != "" ? (
+                    <Typography variant='h5' sx={{ fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '35px' }}>
+                        <span style={{ color: '#FF8635', marginRight: '75px' }}>{props.number}</span>{props.title}
+                    </Typography>
+                ) :
+                    <Typography variant='h5' sx={{ fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '35px' }}>
+                        {props.title}
+                    </Typography>
+                }
+
                 <Typography variant='h6'
-                sx={{
-                    color:'#718096',
-                    textAlign:'justify'
-                }}
+                    sx={{
+                        color: '#718096',
+                        textAlign: 'justify'
+                    }}
                 >
                     {props.text}
                 </Typography>
